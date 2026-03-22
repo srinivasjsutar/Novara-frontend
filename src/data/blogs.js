@@ -1,50 +1,5 @@
 export const BLOGS = [
-  {
-    "id": 11,
-    "slug": "d",
-    "category": "Managed Farmland",
-    "title": "kljdlksjklsfdljfds",
-    "headline": "dsdfklfdjskdsflkjldffds",
-    "description": "ddjkdlsjdsljldskj",
-    "date": "Mar 22, 2026",
-    "keywords": "ddkkfsldjlkfsdj",
-    "author": "Novara Nature Estates",
-    "image": "https://res.cloudinary.com/dwkaitos8/image/upload/v1774169399/n8shqgmvhqcn8wpovrqd.webp",
-    "heroImage": "https://res.cloudinary.com/dwkaitos8/image/upload/v1774169399/n8shqgmvhqcn8wpovrqd.webp",
-    "coverImage": "https://res.cloudinary.com/dwkaitos8/image/upload/v1774169399/n8shqgmvhqcn8wpovrqd.webp",
-    "imageAlt": "kjsdjdskdfskjfdks",
-    "tags": [
-      "dsfdkjdfsklfsd"
-    ],
-    "sections": [
-      {
-        "type": "table",
-        "headers": [
-          "Firstname",
-          "Lastname",
-          "Age"
-        ],
-        "rows": [
-          [
-            "Lucas",
-            "Rossi",
-            "24"
-          ],
-          [
-            "Sophie",
-            "Dubois",
-            "32"
-          ],
-          [
-            "Sam",
-            "Watson",
-            "41"
-          ]
-        ],
-        "themed": false
-      }
-    ]
-  },
+ 
   {
     "id": 1,
     "slug": "farming-techniques-farmlands-near-bangalore",
