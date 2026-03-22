@@ -1,11 +1,57 @@
 export const BLOGS = [
   {
+    "id": 11,
+    "slug": "d",
+    "category": "Managed Farmland",
+    "title": "kljdlksjklsfdljfds",
+    "headline": "dsdfklfdjskdsflkjldffds",
+    "description": "ddjkdlsjdsljldskj",
+    "date": "Mar 22, 2026",
+    "keywords": "ddkkfsldjlkfsdj",
+    "author": "Novara Nature Estates",
+    "image": "https://res.cloudinary.com/dwkaitos8/image/upload/v1774169399/n8shqgmvhqcn8wpovrqd.webp",
+    "heroImage": "https://res.cloudinary.com/dwkaitos8/image/upload/v1774169399/n8shqgmvhqcn8wpovrqd.webp",
+    "coverImage": "https://res.cloudinary.com/dwkaitos8/image/upload/v1774169399/n8shqgmvhqcn8wpovrqd.webp",
+    "imageAlt": "kjsdjdskdfskjfdks",
+    "tags": [
+      "dsfdkjdfsklfsd"
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "headers": [
+          "Firstname",
+          "Lastname",
+          "Age"
+        ],
+        "rows": [
+          [
+            "Lucas",
+            "Rossi",
+            "24"
+          ],
+          [
+            "Sophie",
+            "Dubois",
+            "32"
+          ],
+          [
+            "Sam",
+            "Watson",
+            "41"
+          ]
+        ],
+        "themed": false
+      }
+    ]
+  },
+  {
     "id": 1,
     "slug": "farming-techniques-farmlands-near-bangalore",
     "category": "Sustainable Farmland",
     "title": "Top Farming Techniques Near Bangalore (2026 Guide)",
     "headline": "Top Farming Techniques for Farmlands Near Bangalore: From Organic to High-Tech",
-    "description": "Discover the best farming techniques for farmlands near Bangalore ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ organic farming, hydroponics, drip irrigation & precision farming explained.",
+    "description": "Discover the best farming techniques for farmlands near Bangalore ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ organic farming, hydroponics, drip irrigation & precision farming explained.",
     "date": "2026",
     "keywords": "farming techniques near Bangalore",
     "author": "Novara / Your Brand",
@@ -28,11 +74,11 @@ export const BLOGS = [
         "textBefore": "In this blog, we'll take a deep dive into some of the most effective and popular farming techniques that are perfect for ",
         "linkText": "farmlands near Bangalore",
         "href": "https://www.novaranatureestates.com",
-        "textAfter": "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ from organic practices that respect the land to high-tech solutions that maximize yield. LetÃÂÃÂ¢ÃÂÃÂÃÂÃÂs explore the best ways to grow and thrive on your farmland."
+        "textAfter": "ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ from organic practices that respect the land to high-tech solutions that maximize yield. LetÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs explore the best ways to grow and thrive on your farmland."
       },
       {
         "type": "p",
-        "text": "In this blog, we'll take a deep dive into some of the most effective and popular farming techniques that are perfect for farmlands near Bangalore ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ from organic practices that respect the land to high-tech solutions that maximize yield. LetÃÂÃÂ¢ÃÂÃÂÃÂÃÂs explore the best ways to grow and thrive on your farmland."
+        "text": "In this blog, we'll take a deep dive into some of the most effective and popular farming techniques that are perfect for farmlands near Bangalore ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ from organic practices that respect the land to high-tech solutions that maximize yield. LetÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs explore the best ways to grow and thrive on your farmland."
       },
       {
         "type": "h2",
@@ -121,7 +167,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "With the increasing scarcity of water in many parts of India, including the areas around Bangalore, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs important to adopt water-efficient farming methods. Drip irrigation is one of the most effective techniques to use water efficiently, ensuring your crops get exactly what they need without wasting a drop."
+        "text": "With the increasing scarcity of water in many parts of India, including the areas around Bangalore, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs important to adopt water-efficient farming methods. Drip irrigation is one of the most effective techniques to use water efficiently, ensuring your crops get exactly what they need without wasting a drop."
       },
       {
         "type": "h3",
@@ -129,7 +175,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Water Conservation: Drip irrigation delivers water directly to the plantÃÂÃÂ¢ÃÂÃÂÃÂÃÂs roots, reducing evaporation and water waste."
+        "text": "Water Conservation: Drip irrigation delivers water directly to the plantÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs roots, reducing evaporation and water waste."
       },
       {
         "type": "p",
@@ -137,7 +183,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Targeted Feeding: Nutrients and water are delivered precisely where theyÃÂÃÂ¢ÃÂÃÂÃÂÃÂre needed, leading to better growth and healthier plants."
+        "text": "Targeted Feeding: Nutrients and water are delivered precisely where theyÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre needed, leading to better growth and healthier plants."
       },
       {
         "type": "p",
@@ -208,7 +254,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "As technology continues to shape agriculture, precision farming is transforming how farmers manage their crops. Precision farming uses data, sensors, and technology to monitor every aspect of farming ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ from soil health to weather conditions to water usage."
+        "text": "As technology continues to shape agriculture, precision farming is transforming how farmers manage their crops. Precision farming uses data, sensors, and technology to monitor every aspect of farming ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ from soil health to weather conditions to water usage."
       },
       {
         "type": "h3",
@@ -248,11 +294,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre just starting out or have been farming for years, farmlands near Bangalore offer a world of possibilities. From organic farming that nurtures the earth to high-tech precision farming that maximizes efficiency, the options are endless. The farming landscape is changing, and adopting the right farming techniques can make a huge difference in the success of your land."
+        "text": "Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre just starting out or have been farming for years, farmlands near Bangalore offer a world of possibilities. From organic farming that nurtures the earth to high-tech precision farming that maximizes efficiency, the options are endless. The farming landscape is changing, and adopting the right farming techniques can make a huge difference in the success of your land."
       },
       {
         "type": "p",
-        "text": "As we look ahead to the future, sustainable and innovative farming practices will continue to grow in importance. Whether itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs through organic methods, technology integration, or water-saving systems, these techniques not only help improve your farmÃÂÃÂ¢ÃÂÃÂÃÂÃÂs profitability but also contribute to a more sustainable and eco-friendly future for everyone."
+        "text": "As we look ahead to the future, sustainable and innovative farming practices will continue to grow in importance. Whether itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs through organic methods, technology integration, or water-saving systems, these techniques not only help improve your farmÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs profitability but also contribute to a more sustainable and eco-friendly future for everyone."
       },
       {
         "type": "p",
@@ -282,7 +328,7 @@ export const BLOGS = [
     "sections": [
       {
         "type": "p",
-        "text": "When most people think about investments, their minds usually jump to stocks, bonds, or real estate. But there's another type of investment thatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs often overlooked: farmland. Owning farmland is not only a smart financial decision, but it can also be a rewarding experience in many ways. Let's take a closer look at why farmland ownership is such a great investment and why more people are starting to consider it."
+        "text": "When most people think about investments, their minds usually jump to stocks, bonds, or real estate. But there's another type of investment thatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs often overlooked: farmland. Owning farmland is not only a smart financial decision, but it can also be a rewarding experience in many ways. Let's take a closer look at why farmland ownership is such a great investment and why more people are starting to consider it."
       },
       {
         "type": "h2",
@@ -290,7 +336,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "One of the top reasons people invest in farmland is the potential for steady income. Farmland isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt just a piece of land sitting idle ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a source of income that can generate money year after year. By farming the land, you can grow crops, raise livestock, or even sell organic produce, all of which can create a regular income stream."
+        "text": "One of the top reasons people invest in farmland is the potential for steady income. Farmland isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt just a piece of land sitting idle ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a source of income that can generate money year after year. By farming the land, you can grow crops, raise livestock, or even sell organic produce, all of which can create a regular income stream."
       },
       {
         "type": "p",
@@ -302,11 +348,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Farmland tends to increase in value over time. Unlike other investments that can fluctuate with market conditions, land generally appreciates in value because itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a finite resource. As the demand for food increases globally, especially with growing populations and urban expansion, the value of productive agricultural land continues to rise."
+        "text": "Farmland tends to increase in value over time. Unlike other investments that can fluctuate with market conditions, land generally appreciates in value because itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a finite resource. As the demand for food increases globally, especially with growing populations and urban expansion, the value of productive agricultural land continues to rise."
       },
       {
         "type": "p",
-        "text": "WhatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs more, owning farmland near developing areas (like Ecovara near Lepakshi) can add even more value, as the surrounding land becomes more desirable over time. Location matters, and if your farmland is in a growing region, it can experience significant value growth over the years."
+        "text": "WhatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs more, owning farmland near developing areas (like Ecovara near Lepakshi) can add even more value, as the surrounding land becomes more desirable over time. Location matters, and if your farmland is in a growing region, it can experience significant value growth over the years."
       },
       {
         "type": "h2",
@@ -314,15 +360,15 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "As the old saying goes, ÃÂÃÂ¢ÃÂÃÂÃÂÃÂDonÃÂÃÂ¢ÃÂÃÂÃÂÃÂt put all your eggs in one basket.ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ThatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs exactly why farmland is such a valuable addition to any investment portfolio. By owning farmland, youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre diversifying your assets in a way that can weather economic downturns. While stock markets and real estate can be unpredictable, farmland tends to hold its ground, providing a stable investment even during uncertain times."
+        "text": "As the old saying goes, ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂDonÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt put all your eggs in one basket.ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ ThatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs exactly why farmland is such a valuable addition to any investment portfolio. By owning farmland, youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre diversifying your assets in a way that can weather economic downturns. While stock markets and real estate can be unpredictable, farmland tends to hold its ground, providing a stable investment even during uncertain times."
       },
       {
         "type": "p",
-        "text": "Plus, farmland is a tangible asset. You can see it, touch it, and use it. ItÃÂÃÂ¢ÃÂÃÂÃÂÃÂs something real that you can make use of, unlike stocks or bonds which are more abstract. So, whether you're looking to secure wealth for the future or balance your portfolio, farmland offers an excellent hedge against market volatility."
+        "text": "Plus, farmland is a tangible asset. You can see it, touch it, and use it. ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs something real that you can make use of, unlike stocks or bonds which are more abstract. So, whether you're looking to secure wealth for the future or balance your portfolio, farmland offers an excellent hedge against market volatility."
       },
       {
         "type": "h2",
-        "text": "4. FarmlandÃÂÃÂ¢ÃÂÃÂÃÂÃÂs Tax Benefits and Government Incentives"
+        "text": "4. FarmlandÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs Tax Benefits and Government Incentives"
       },
       {
         "type": "p_with_link",
@@ -341,15 +387,15 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Farmland isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt just a short-term investment; itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs also an asset you can pass down through generations. ThereÃÂÃÂ¢ÃÂÃÂÃÂÃÂs something deeply rewarding about owning a piece of land that can continue to provide for your family, generation after generation. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre growing crops, running a small farm, or simply holding onto the land, it can serve as a long-term financial safety net for your children or grandchildren."
+        "text": "Farmland isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt just a short-term investment; itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs also an asset you can pass down through generations. ThereÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs something deeply rewarding about owning a piece of land that can continue to provide for your family, generation after generation. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre growing crops, running a small farm, or simply holding onto the land, it can serve as a long-term financial safety net for your children or grandchildren."
       },
       {
         "type": "p",
-        "text": "Owning farmland also allows you to instill values of hard work, sustainability, and connection to nature in your family. For many, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs not just about the financial returns ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs about creating a legacy that future generations can be proud of."
+        "text": "Owning farmland also allows you to instill values of hard work, sustainability, and connection to nature in your family. For many, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs not just about the financial returns ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs about creating a legacy that future generations can be proud of."
       },
       {
         "type": "h3",
-        "text": "Conclusion: Farmland as an Investment ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ More Than Just a Piece of Land"
+        "text": "Conclusion: Farmland as an Investment ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ More Than Just a Piece of Land"
       },
       {
         "type": "p",
@@ -357,10 +403,10 @@ export const BLOGS = [
       },
       {
         "type": "p_with_link",
-        "textBefore": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre considering adding farmland to your investment portfolio, EcovaraÃÂÃÂ¢ÃÂÃÂÃÂÃÂs ",
+        "textBefore": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre considering adding farmland to your investment portfolio, EcovaraÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs ",
         "linkText": "sustainable farming",
         "href": "https://www.novaranatureestates.com/whynovara",
-        "textAfter": " community near Lepakshi offers a unique opportunity to reap the benefits of owning land while living a sustainable, eco-friendly lifestyle. So why not take the leap into farmland investment? ItÃÂÃÂ¢ÃÂÃÂÃÂÃÂs more than just land ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a chance to grow your wealth, your lifestyle, and your legacy."
+        "textAfter": " community near Lepakshi offers a unique opportunity to reap the benefits of owning land while living a sustainable, eco-friendly lifestyle. So why not take the leap into farmland investment? ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs more than just land ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a chance to grow your wealth, your lifestyle, and your legacy."
       }
     ]
   },
@@ -386,14 +432,14 @@ export const BLOGS = [
     "sections": [
       {
         "type": "p",
-        "text": "When you think about investment, you might imagine stocks, real estate, or mutual funds. But have you ever considered investing in farmland? ItÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a smart, stable, and long-term way to grow your wealth ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ and itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs especially appealing if youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre looking for something tangible and meaningful. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre drawn to the idea of cultivating crops, enjoying the peace of rural life, or diversifying your investment portfolio, owning farmland in India offers a unique set of benefits."
+        "text": "When you think about investment, you might imagine stocks, real estate, or mutual funds. But have you ever considered investing in farmland? ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a smart, stable, and long-term way to grow your wealth ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ and itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs especially appealing if youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre looking for something tangible and meaningful. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre drawn to the idea of cultivating crops, enjoying the peace of rural life, or diversifying your investment portfolio, owning farmland in India offers a unique set of benefits."
       },
       {
         "type": "p_with_link",
-        "textBefore": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre new to ",
+        "textBefore": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre new to ",
         "linkText": "farmland investment,",
         "href": "https://www.novaranatureestates.com/projects",
-        "textAfter": " donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt worry! WeÃÂÃÂ¢ÃÂÃÂÃÂÃÂve broken it down into simple steps to guide you through the process. By the end of this post, youÃÂÃÂ¢ÃÂÃÂÃÂÃÂll have a clear understanding of how to get started, what to consider, and why investing in farmland could be one of the best decisions you ever make."
+        "textAfter": " donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt worry! WeÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂve broken it down into simple steps to guide you through the process. By the end of this post, youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂll have a clear understanding of how to get started, what to consider, and why investing in farmland could be one of the best decisions you ever make."
       },
       {
         "type": "h2",
@@ -401,7 +447,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Before diving into the how, letÃÂÃÂ¢ÃÂÃÂÃÂÃÂs first take a moment to understand the why. Why should you invest in farmland?"
+        "text": "Before diving into the how, letÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs first take a moment to understand the why. Why should you invest in farmland?"
       },
       {
         "type": "h3",
@@ -425,7 +471,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Farmland is a physical asset ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ you can see it, touch it, and make use of it. Whether you choose to farm, lease, or sell the produce, it provides an opportunity for hands-on management."
+        "text": "Farmland is a physical asset ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ you can see it, touch it, and make use of it. Whether you choose to farm, lease, or sell the produce, it provides an opportunity for hands-on management."
       },
       {
         "type": "h3",
@@ -444,7 +490,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Investing in farmland isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt the same as buying a house. The land market can vary greatly depending on the region, and there are several factors to consider."
+        "text": "Investing in farmland isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt the same as buying a house. The land market can vary greatly depending on the region, and there are several factors to consider."
       },
       {
         "type": "h3",
@@ -452,7 +498,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "The location of the land is crucial. Is it close to urban areas or more remote? Is it near key agricultural zones, or is it a popular tourist area where agro-tourism can become a future opportunity? For example, NovaraÃÂÃÂ¢ÃÂÃÂÃÂÃÂs Ecovara Project near Lepakshi offers a blend of peace and proximity to growing cities."
+        "text": "The location of the land is crucial. Is it close to urban areas or more remote? Is it near key agricultural zones, or is it a popular tourist area where agro-tourism can become a future opportunity? For example, NovaraÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs Ecovara Project near Lepakshi offers a blend of peace and proximity to growing cities."
       },
       {
         "type": "h3",
@@ -468,7 +514,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Check the water situation ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ can you easily irrigate the land, or are there seasonal shortages? Access to water is essential for agriculture."
+        "text": "Check the water situation ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ can you easily irrigate the land, or are there seasonal shortages? Access to water is essential for agriculture."
       },
       {
         "type": "h3",
@@ -508,7 +554,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Some states have laws that limit the amount of land an individual can own. Ensure youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre not violating these restrictions."
+        "text": "Some states have laws that limit the amount of land an individual can own. Ensure youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre not violating these restrictions."
       },
       {
         "type": "h3",
@@ -524,7 +570,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Farmland can be used for many purposes, and itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs important to match the type of land with your goals. Here are some options to consider:"
+        "text": "Farmland can be used for many purposes, and itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs important to match the type of land with your goals. Here are some options to consider:"
       },
       {
         "type": "h3",
@@ -540,7 +586,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre looking for a second home or a place to relax on weekends, you might want to invest in farmland thatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs more recreational or has scenic views (for instance, the Ecovara project)."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre looking for a second home or a place to relax on weekends, you might want to invest in farmland thatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs more recreational or has scenic views (for instance, the Ecovara project)."
       },
       {
         "type": "h3",
@@ -564,7 +610,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Buying farmland requires capital, and while itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs tempting to pay in cash, many people choose financing options to make the process more manageable."
+        "text": "Buying farmland requires capital, and while itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs tempting to pay in cash, many people choose financing options to make the process more manageable."
       },
       {
         "type": "h3",
@@ -572,7 +618,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Many Indian banks offer loans for farmland, but youÃÂÃÂ¢ÃÂÃÂÃÂÃÂll need to have a clear plan for how you intend to use the land (e.g., agriculture, development)."
+        "text": "Many Indian banks offer loans for farmland, but youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂll need to have a clear plan for how you intend to use the land (e.g., agriculture, development)."
       },
       {
         "type": "h3",
@@ -596,7 +642,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Once youÃÂÃÂ¢ÃÂÃÂÃÂÃÂve found the right piece of land and sorted the legalities and financing, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs time to close the deal."
+        "text": "Once youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂve found the right piece of land and sorted the legalities and financing, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs time to close the deal."
       },
       {
         "type": "h3",
@@ -604,7 +650,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "DonÃÂÃÂ¢ÃÂÃÂÃÂÃÂt accept the first price that comes your way. Negotiate with the seller to get a fair deal."
+        "text": "DonÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt accept the first price that comes your way. Negotiate with the seller to get a fair deal."
       },
       {
         "type": "h3",
@@ -620,7 +666,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "In India, once the purchase is agreed upon, the final step is land registration. This legally transfers ownership from the seller to you, and itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs done through the local sub-registrarÃÂÃÂ¢ÃÂÃÂÃÂÃÂs office. YouÃÂÃÂ¢ÃÂÃÂÃÂÃÂll need to bring all necessary documents, including the sale agreement and ID proof."
+        "text": "In India, once the purchase is agreed upon, the final step is land registration. This legally transfers ownership from the seller to you, and itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs done through the local sub-registrarÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs office. YouÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂll need to bring all necessary documents, including the sale agreement and ID proof."
       },
       {
         "type": "h2",
@@ -628,7 +674,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Once you own the land, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs time to manage it. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre farming yourself, renting it out, or exploring agro-tourism, regular maintenance and management are key."
+        "text": "Once you own the land, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs time to manage it. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre farming yourself, renting it out, or exploring agro-tourism, regular maintenance and management are key."
       },
       {
         "type": "h3",
@@ -644,7 +690,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "If you donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt plan to farm but want to generate income, you can lease your land to local farmers or companies. Make sure the lease agreement is clear on the terms."
+        "text": "If you donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt plan to farm but want to generate income, you can lease your land to local farmers or companies. Make sure the lease agreement is clear on the terms."
       },
       {
         "type": "h3",
@@ -660,11 +706,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Investing in farmland is a rewarding and tangible way to grow your wealth. While the process can seem overwhelming at first, breaking it down into manageable steps ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ from understanding the market to securing financing ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ makes it much easier. By taking the time to research, learn, and plan, youÃÂÃÂ¢ÃÂÃÂÃÂÃÂll set yourself up for a successful investment that benefits you for years to come."
+        "text": "Investing in farmland is a rewarding and tangible way to grow your wealth. While the process can seem overwhelming at first, breaking it down into manageable steps ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ from understanding the market to securing financing ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ makes it much easier. By taking the time to research, learn, and plan, youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂll set yourself up for a successful investment that benefits you for years to come."
       },
       {
         "type": "p",
-        "text": "Farmland in India holds great potential. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre looking to grow crops, lease the land, or turn it into a farm stay, the opportunities are endless."
+        "text": "Farmland in India holds great potential. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre looking to grow crops, lease the land, or turn it into a farm stay, the opportunities are endless."
       }
     ]
   },
@@ -690,14 +736,14 @@ export const BLOGS = [
     "sections": [
       {
         "type": "p_with_link",
-        "textBefore": "Life in Bangalore can get fast-paced. With the traffic, deadlines, and constant hustle, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs no wonder more and more people are looking for a place to unwind and reconnect with nature. Imagine this: after a busy week in the city, you drive just a couple of hours to a peaceful, serene retreat surrounded by greenery, fresh air, and open spaces. No, it's not a dream ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ it's becoming a reality with ",
+        "textBefore": "Life in Bangalore can get fast-paced. With the traffic, deadlines, and constant hustle, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs no wonder more and more people are looking for a place to unwind and reconnect with nature. Imagine this: after a busy week in the city, you drive just a couple of hours to a peaceful, serene retreat surrounded by greenery, fresh air, and open spaces. No, it's not a dream ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it's becoming a reality with ",
         "linkText": "farmlands near Bangalore.",
         "href": "https://www.novaranatureestates.com",
         "textAfter": ""
       },
       {
         "type": "p",
-        "text": "More people are choosing to invest in farmlands not just for farming or investment purposes, but as their very own weekend escape. The growing interest in sustainable living, peace of mind, and getting away from the cityÃÂÃÂ¢ÃÂÃÂÃÂÃÂs chaos has made these farmlands a perfect choice for many looking for a getaway. LetÃÂÃÂ¢ÃÂÃÂÃÂÃÂs dive into why farmlands near Bangalore are quickly becoming the ideal weekend retreat."
+        "text": "More people are choosing to invest in farmlands not just for farming or investment purposes, but as their very own weekend escape. The growing interest in sustainable living, peace of mind, and getting away from the cityÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs chaos has made these farmlands a perfect choice for many looking for a getaway. LetÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs dive into why farmlands near Bangalore are quickly becoming the ideal weekend retreat."
       },
       {
         "type": "h2",
@@ -705,11 +751,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "One of the best things about farmlands near Bangalore is the location. Whether you want to enjoy a weekend getaway every now and then or youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre looking to escape for longer, farmlands just outside the city make it easy. You donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt need to spend hours driving to a remote location. In just a couple of hours, you can leave the traffic and noise of Bangalore behind and step into a world of fresh air and open spaces."
+        "text": "One of the best things about farmlands near Bangalore is the location. Whether you want to enjoy a weekend getaway every now and then or youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre looking to escape for longer, farmlands just outside the city make it easy. You donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt need to spend hours driving to a remote location. In just a couple of hours, you can leave the traffic and noise of Bangalore behind and step into a world of fresh air and open spaces."
       },
       {
         "type": "p",
-        "text": "For example, land near places like Nandi Hills, Devanahalli, and Lepakshi not only offer beautiful landscapes but also proximity to BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂs city center. These areas are becoming increasingly popular for those who want to build their dream weekend farmhouses or simply enjoy a farm stay."
+        "text": "For example, land near places like Nandi Hills, Devanahalli, and Lepakshi not only offer beautiful landscapes but also proximity to BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs city center. These areas are becoming increasingly popular for those who want to build their dream weekend farmhouses or simply enjoy a farm stay."
       },
       {
         "type": "h2",
@@ -717,11 +763,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "ThereÃÂÃÂ¢ÃÂÃÂÃÂÃÂs something uniquely special about being surrounded by nature. Whether itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs the sight of vast green fields, the smell of fresh earth, or the sound of birds chirping, farmlands near Bangalore offer a refreshing break from the hustle and bustle. Imagine spending your weekend on a plot of land where you can breathe in the fresh air, enjoy a sunset over your private property, and take long walks through open fields."
+        "text": "ThereÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs something uniquely special about being surrounded by nature. Whether itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs the sight of vast green fields, the smell of fresh earth, or the sound of birds chirping, farmlands near Bangalore offer a refreshing break from the hustle and bustle. Imagine spending your weekend on a plot of land where you can breathe in the fresh air, enjoy a sunset over your private property, and take long walks through open fields."
       },
       {
         "type": "p",
-        "text": "For many, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs the chance to slow down, appreciate the simple things in life, and reconnect with nature. No crowded cafes or loud traffic ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ just peaceful surroundings where you can finally take a break from technology and distractions."
+        "text": "For many, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs the chance to slow down, appreciate the simple things in life, and reconnect with nature. No crowded cafes or loud traffic ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ just peaceful surroundings where you can finally take a break from technology and distractions."
       },
       {
         "type": "h2",
@@ -736,7 +782,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Building a weekend farmhouse on your farmland offers the best of both worlds. You can design it to reflect your personality, whether you want a cozy retreat with a modern twist or a rustic cottage that feels like a home away from home. Plus, the land surrounding your house can be used to grow your own vegetables, fruits, and even flowers ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ adding that personal touch to your weekend retreat."
+        "text": "Building a weekend farmhouse on your farmland offers the best of both worlds. You can design it to reflect your personality, whether you want a cozy retreat with a modern twist or a rustic cottage that feels like a home away from home. Plus, the land surrounding your house can be used to grow your own vegetables, fruits, and even flowers ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ adding that personal touch to your weekend retreat."
       },
       {
         "type": "h2",
@@ -744,11 +790,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "In todayÃÂÃÂ¢ÃÂÃÂÃÂÃÂs world, where weÃÂÃÂ¢ÃÂÃÂÃÂÃÂre constantly connected to our phones, emails, and social media, a weekend retreat on farmland offers a much-needed digital detox. Picture this: no email alerts, no notifications, just you and the beauty of nature. Farmlands near Bangalore provide a sanctuary where you can truly switch off."
+        "text": "In todayÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs world, where weÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre constantly connected to our phones, emails, and social media, a weekend retreat on farmland offers a much-needed digital detox. Picture this: no email alerts, no notifications, just you and the beauty of nature. Farmlands near Bangalore provide a sanctuary where you can truly switch off."
       },
       {
         "type": "p",
-        "text": "You can spend your time reading a book in the garden, taking a leisurely walk around the property, or perhaps even trying your hand at some light farming. ItÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a place where you can embrace a slower pace of life, free from the constant buzz of the digital world."
+        "text": "You can spend your time reading a book in the garden, taking a leisurely walk around the property, or perhaps even trying your hand at some light farming. ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a place where you can embrace a slower pace of life, free from the constant buzz of the digital world."
       },
       {
         "type": "h2",
@@ -756,11 +802,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "More people today are embracing sustainability and mindful living. Farmlands near Bangalore provide the perfect setting to do just that. Whether you want to grow your own organic vegetables, set up a small herb garden, or simply live in a way thatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs more in tune with nature, owning farmland gives you the space to create a sustainable lifestyle."
+        "text": "More people today are embracing sustainability and mindful living. Farmlands near Bangalore provide the perfect setting to do just that. Whether you want to grow your own organic vegetables, set up a small herb garden, or simply live in a way thatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs more in tune with nature, owning farmland gives you the space to create a sustainable lifestyle."
       },
       {
         "type": "p",
-        "text": "The beauty of owning farmland is that you can start small. You donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt need to become a full-time farmer to enjoy the benefits of living closer to nature. Even if itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs just cultivating a garden or learning about organic farming, your weekend retreat can help you embrace eco-friendly living and grow your own food, which adds a layer of fulfillment thatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs hard to find in the city."
+        "text": "The beauty of owning farmland is that you can start small. You donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt need to become a full-time farmer to enjoy the benefits of living closer to nature. Even if itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs just cultivating a garden or learning about organic farming, your weekend retreat can help you embrace eco-friendly living and grow your own food, which adds a layer of fulfillment thatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs hard to find in the city."
       },
       {
         "type": "h2",
@@ -768,11 +814,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "A weekend retreat isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt just about peace and solitude ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs also about creating memories with your loved ones. A farmhouse near Bangalore provides the perfect setting for family and friends to gather and enjoy quality time together."
+        "text": "A weekend retreat isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt just about peace and solitude ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs also about creating memories with your loved ones. A farmhouse near Bangalore provides the perfect setting for family and friends to gather and enjoy quality time together."
       },
       {
         "type": "p",
-        "text": "Whether itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a weekend BBQ, a nature walk, or a simple picnic in the fields, a farmhouse on your farmland offers the space to host guests without the restrictions of city living. Imagine having your family over for a weekend of fun, away from the distractions of everyday life ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ everyone can enjoy the wide-open spaces and activities on the land."
+        "text": "Whether itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a weekend BBQ, a nature walk, or a simple picnic in the fields, a farmhouse on your farmland offers the space to host guests without the restrictions of city living. Imagine having your family over for a weekend of fun, away from the distractions of everyday life ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ everyone can enjoy the wide-open spaces and activities on the land."
       },
       {
         "type": "h2",
@@ -780,11 +826,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre not quite ready to buy land but still want to experience the charm of farmlands, farm stays near Bangalore are a growing trend. This form of agro-tourism allows you to spend weekends on a working farm, experiencing life as a farmer, learning about organic farming, or even participating in harvesting crops."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre not quite ready to buy land but still want to experience the charm of farmlands, farm stays near Bangalore are a growing trend. This form of agro-tourism allows you to spend weekends on a working farm, experiencing life as a farmer, learning about organic farming, or even participating in harvesting crops."
       },
       {
         "type": "p",
-        "text": "This type of rural tourism is increasingly popular for city dwellers who crave the peace and beauty of nature. And if you do decide to invest in farmland near Bangalore, you can explore the agro-tourism opportunity as a potential income-generating venture ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ offering guests a taste of farm life."
+        "text": "This type of rural tourism is increasingly popular for city dwellers who crave the peace and beauty of nature. And if you do decide to invest in farmland near Bangalore, you can explore the agro-tourism opportunity as a potential income-generating venture ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ offering guests a taste of farm life."
       },
       {
         "type": "h3",
@@ -792,7 +838,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Investing in farmland near Bangalore isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt just about owning property ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs about creating a lifestyle that offers peace, tranquility, and a chance to disconnect from the fast pace of city life. With easy access to the city, stunning natural beauty, and the ability to build your own dream weekend farmhouse, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs easy to see why so many people are choosing farmlands near Bangalore as their ideal weekend retreat."
+        "text": "Investing in farmland near Bangalore isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt just about owning property ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs about creating a lifestyle that offers peace, tranquility, and a chance to disconnect from the fast pace of city life. With easy access to the city, stunning natural beauty, and the ability to build your own dream weekend farmhouse, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs easy to see why so many people are choosing farmlands near Bangalore as their ideal weekend retreat."
       },
       {
         "type": "p",
@@ -822,10 +868,10 @@ export const BLOGS = [
     "sections": [
       {
         "type": "p_with_link",
-        "textBefore": "Farmland is more than just a plot of land ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs an investment that can work for you. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre an aspiring farmer or someone looking to diversify your income streams, generating passive income from ",
+        "textBefore": "Farmland is more than just a plot of land ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs an investment that can work for you. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre an aspiring farmer or someone looking to diversify your income streams, generating passive income from ",
         "linkText": "farmland near Bangalore",
         "href": "https://www.novaranatureestates.com",
-        "textAfter": " can be a rewarding opportunity. With the growing interest in sustainable farming, organic produce, and agro-tourism, there are plenty of ways to turn your land into a reliable source of income. LetÃÂÃÂ¢ÃÂÃÂÃÂÃÂs dive into how you can make the most of farmland near Bangalore and create a passive income that works year-round."
+        "textAfter": " can be a rewarding opportunity. With the growing interest in sustainable farming, organic produce, and agro-tourism, there are plenty of ways to turn your land into a reliable source of income. LetÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs dive into how you can make the most of farmland near Bangalore and create a passive income that works year-round."
       },
       {
         "type": "h2",
@@ -837,7 +883,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "This option is particularly appealing if you own fertile farmland but arenÃÂÃÂ¢ÃÂÃÂÃÂÃÂt interested in farming it yourself. Local farmers or agricultural businesses are often looking for land to lease, and you can negotiate a fixed rent or a share of the profits in exchange for letting them farm your land."
+        "text": "This option is particularly appealing if you own fertile farmland but arenÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt interested in farming it yourself. Local farmers or agricultural businesses are often looking for land to lease, and you can negotiate a fixed rent or a share of the profits in exchange for letting them farm your land."
       },
       {
         "type": "p",
@@ -853,11 +899,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Starting a small-scale farm where you grow vegetables, fruits, or herbs, and selling them directly to local markets, restaurants, or through subscription boxes, can provide a lucrative income. While this isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt 100% passive, it can be made relatively low-maintenance by outsourcing parts of the process, like hiring farmhands or setting up automation systems for irrigation and harvesting."
+        "text": "Starting a small-scale farm where you grow vegetables, fruits, or herbs, and selling them directly to local markets, restaurants, or through subscription boxes, can provide a lucrative income. While this isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt 100% passive, it can be made relatively low-maintenance by outsourcing parts of the process, like hiring farmhands or setting up automation systems for irrigation and harvesting."
       },
       {
         "type": "p",
-        "text": "By focusing on organic farming or specialty crops, you can command higher prices for your produce and build a steady revenue stream. And if you donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt have the time or resources to manage it full-time, you can always lease the land to a farming business that will handle the day-to-day operations."
+        "text": "By focusing on organic farming or specialty crops, you can command higher prices for your produce and build a steady revenue stream. And if you donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt have the time or resources to manage it full-time, you can always lease the land to a farming business that will handle the day-to-day operations."
       },
       {
         "type": "h2",
@@ -901,15 +947,15 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre looking to make the most of your land and generate a steady income with relatively low effort, growing specialty crops could be the answer. Crops like ginseng, saffron, organic herbs, or even flowers can be highly profitable and donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt require the same level of maintenance as traditional crops like rice or wheat."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre looking to make the most of your land and generate a steady income with relatively low effort, growing specialty crops could be the answer. Crops like ginseng, saffron, organic herbs, or even flowers can be highly profitable and donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt require the same level of maintenance as traditional crops like rice or wheat."
       },
       {
         "type": "p",
-        "text": "These types of crops are usually in demand by high-end restaurants, local markets, or specialty stores. Growing and selling niche produce thatÃÂÃÂ¢ÃÂÃÂÃÂÃÂs hard to find elsewhere can ensure a consistent premium price for your crops, allowing you to generate passive income over time. Once youÃÂÃÂ¢ÃÂÃÂÃÂÃÂve planted these crops, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs mostly a matter of waiting for them to grow and harvesting them when the time is right."
+        "text": "These types of crops are usually in demand by high-end restaurants, local markets, or specialty stores. Growing and selling niche produce thatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs hard to find elsewhere can ensure a consistent premium price for your crops, allowing you to generate passive income over time. Once youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂve planted these crops, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs mostly a matter of waiting for them to grow and harvesting them when the time is right."
       },
       {
         "type": "p",
-        "text": "If you donÃÂÃÂ¢ÃÂÃÂÃÂÃÂt want to manage this yourself, you can lease the land to someone who specializes in growing specialty crops while still receiving a return on your land."
+        "text": "If you donÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt want to manage this yourself, you can lease the land to someone who specializes in growing specialty crops while still receiving a return on your land."
       },
       {
         "type": "h2",
@@ -921,7 +967,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "If your farmland has a good amount of open space and receives plenty of sunlight, you can generate electricity through solar panels and either use it for your own needs or sell it to the grid. Depending on the size of your land and installation, you could earn a steady income from the electricity produced. This is a completely passive income stream ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ once the system is installed, thereÃÂÃÂ¢ÃÂÃÂÃÂÃÂs little to no maintenance, and you can enjoy regular payouts for the power you generate."
+        "text": "If your farmland has a good amount of open space and receives plenty of sunlight, you can generate electricity through solar panels and either use it for your own needs or sell it to the grid. Depending on the size of your land and installation, you could earn a steady income from the electricity produced. This is a completely passive income stream ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ once the system is installed, thereÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs little to no maintenance, and you can enjoy regular payouts for the power you generate."
       },
       {
         "type": "h2",
@@ -957,7 +1003,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "This type of leasing can offer a steady income with little involvement on your part, especially if youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre not directly managing the events. Simply set up agreements for the land to be used for recreational purposes, and collect payments when the area is booked."
+        "text": "This type of leasing can offer a steady income with little involvement on your part, especially if youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre not directly managing the events. Simply set up agreements for the land to be used for recreational purposes, and collect payments when the area is booked."
       },
       {
         "type": "h2",
@@ -977,15 +1023,15 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Generating passive income from farmland near Bangalore isnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt just about sitting back and hoping for the best. ItÃÂÃÂ¢ÃÂÃÂÃÂÃÂs about being smart with your land and exploring the many opportunities available. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre leasing it out, starting a farm-to-table business, or setting up an agro-tourism venture, farmland can be a reliable and profitable asset that works for you year-round."
+        "text": "Generating passive income from farmland near Bangalore isnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt just about sitting back and hoping for the best. ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs about being smart with your land and exploring the many opportunities available. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre leasing it out, starting a farm-to-table business, or setting up an agro-tourism venture, farmland can be a reliable and profitable asset that works for you year-round."
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre new to the idea, start small and experiment with different options. With BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂs booming real estate market and increasing interest in sustainable living, owning farmland near the city can offer you the financial freedom and lifestyle that so many people are searching for."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre new to the idea, start small and experiment with different options. With BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs booming real estate market and increasing interest in sustainable living, owning farmland near the city can offer you the financial freedom and lifestyle that so many people are searching for."
       },
       {
         "type": "p",
-        "text": "Ready to explore passive income opportunities on your farmland? The possibilities are endless ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ and the rewards are waiting."
+        "text": "Ready to explore passive income opportunities on your farmland? The possibilities are endless ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ and the rewards are waiting."
       }
     ]
   },
@@ -1011,11 +1057,11 @@ export const BLOGS = [
     "sections": [
       {
         "type": "p",
-        "text": "Investing in farmland has always been a reliable way to build wealth and secure a future. But with the ever-changing landscape of agriculture, technology, and urbanization, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs important to understand the trends shaping farmland investment in India. As we move towards 2026, several exciting shifts are taking place that make farmland a more attractive and profitable investment than ever before."
+        "text": "Investing in farmland has always been a reliable way to build wealth and secure a future. But with the ever-changing landscape of agriculture, technology, and urbanization, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs important to understand the trends shaping farmland investment in India. As we move towards 2026, several exciting shifts are taking place that make farmland a more attractive and profitable investment than ever before."
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre thinking about investing in farmland, or if you're already a landowner, itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs essential to keep an eye on the evolving trends. In this blog, weÃÂÃÂ¢ÃÂÃÂÃÂÃÂll explore the key trends that are likely to impact the farmland market in India over the next few years and how you can leverage these changes to make informed investment decisions."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre thinking about investing in farmland, or if you're already a landowner, itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs essential to keep an eye on the evolving trends. In this blog, weÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂll explore the key trends that are likely to impact the farmland market in India over the next few years and how you can leverage these changes to make informed investment decisions."
       },
       {
         "type": "h2",
@@ -1023,7 +1069,7 @@ export const BLOGS = [
       },
       {
         "type": "p_with_link",
-        "textBefore": "One of the most noticeable trends in IndiaÃÂÃÂ¢ÃÂÃÂÃÂÃÂs agricultural sector is the rising demand for ",
+        "textBefore": "One of the most noticeable trends in IndiaÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs agricultural sector is the rising demand for ",
         "linkText": "sustainable and organic farming",
         "href": "https://www.novaranatureestates.com/whynovara",
         "textAfter": " As awareness about health and environmental sustainability grows, consumers are increasingly turning to organic produce. This shift is prompting farmers to adopt more eco-friendly practices, which in turn is driving up the demand for land that supports organic farming."
@@ -1034,7 +1080,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre considering investing in farmland, look for properties that offer good soil quality and favorable climates for organic farming. These lands are likely to see higher demand and potentially higher returns, as the market for organic products continues to expand."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre considering investing in farmland, look for properties that offer good soil quality and favorable climates for organic farming. These lands are likely to see higher demand and potentially higher returns, as the market for organic products continues to expand."
       },
       {
         "type": "h2",
@@ -1042,7 +1088,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "IndiaÃÂÃÂ¢ÃÂÃÂÃÂÃÂs economy is projected to continue growing, and as urbanization expands, the pressure on agricultural land will increase. While this may seem like a negative factor for farmland owners, it actually presents a long-term opportunity for capital appreciation."
+        "text": "IndiaÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs economy is projected to continue growing, and as urbanization expands, the pressure on agricultural land will increase. While this may seem like a negative factor for farmland owners, it actually presents a long-term opportunity for capital appreciation."
       },
       {
         "type": "p",
@@ -1062,11 +1108,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "For investors, agri-tech offers an exciting opportunity to modernize farming practices, increase productivity, and boost profitability on their land. If you're investing in farmland in 2026, it would be wise to explore how you can incorporate technology to improve operations ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ whether itÃÂÃÂ¢ÃÂÃÂÃÂÃÂs through automation, better crop management, or sustainable resource usage."
+        "text": "For investors, agri-tech offers an exciting opportunity to modernize farming practices, increase productivity, and boost profitability on their land. If you're investing in farmland in 2026, it would be wise to explore how you can incorporate technology to improve operations ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ whether itÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs through automation, better crop management, or sustainable resource usage."
       },
       {
         "type": "p",
-        "text": "This trend also opens the door to precision farming ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ a more efficient and profitable way to manage crops using data and technology. As this becomes more widespread, it could significantly increase the returns on your farmland investment."
+        "text": "This trend also opens the door to precision farming ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ a more efficient and profitable way to manage crops using data and technology. As this becomes more widespread, it could significantly increase the returns on your farmland investment."
       },
       {
         "type": "h2",
@@ -1074,7 +1120,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "With the hustle and bustle of urban life, more people are seeking out rural escapes and a return to nature. Agro-tourism ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ where visitors experience life on a farm ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ is expected to become a significant trend in India by 2026."
+        "text": "With the hustle and bustle of urban life, more people are seeking out rural escapes and a return to nature. Agro-tourism ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ where visitors experience life on a farm ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ is expected to become a significant trend in India by 2026."
       },
       {
         "type": "p",
@@ -1098,7 +1144,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Additionally, the governmentÃÂÃÂ¢ÃÂÃÂÃÂÃÂs push for food security will ensure that demand for agricultural land continues to grow. Farmland owners who align with these initiatives and invest in technologies like drip irrigation or solar-powered systems will be positioned for success."
+        "text": "Additionally, the governmentÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs push for food security will ensure that demand for agricultural land continues to grow. Farmland owners who align with these initiatives and invest in technologies like drip irrigation or solar-powered systems will be positioned for success."
       },
       {
         "type": "h2",
@@ -1106,7 +1152,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "In a world where people are becoming more conscious of their environmental impact, thereÃÂÃÂ¢ÃÂÃÂÃÂÃÂs a growing interest in self-sufficiency and green living. More individuals are turning to farmland near Bangalore and other cities as an opportunity to live off the grid and grow their own food."
+        "text": "In a world where people are becoming more conscious of their environmental impact, thereÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs a growing interest in self-sufficiency and green living. More individuals are turning to farmland near Bangalore and other cities as an opportunity to live off the grid and grow their own food."
       },
       {
         "type": "p",
@@ -1121,11 +1167,11 @@ export const BLOGS = [
         "textBefore": "The future of ",
         "linkText": "farmland investment",
         "href": "https://www.novaranatureestates.com/projects",
-        "textAfter": " in India looks promising as we move toward 2026. From the rise of sustainable farming practices and agri-tech to the increasing popularity of agro-tourism, there are countless opportunities for those looking to invest in farmland. With IndiaÃÂÃÂ¢ÃÂÃÂÃÂÃÂs growing population, rapid urbanization, and increasing demand for organic produce, farmland is set to become an even more valuable asset."
+        "textAfter": " in India looks promising as we move toward 2026. From the rise of sustainable farming practices and agri-tech to the increasing popularity of agro-tourism, there are countless opportunities for those looking to invest in farmland. With IndiaÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs growing population, rapid urbanization, and increasing demand for organic produce, farmland is set to become an even more valuable asset."
       },
       {
         "type": "p",
-        "text": "If youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre considering investing in farmland, now is the perfect time to explore these trends and position yourself for success. Whether youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre looking for long-term capital appreciation, income through farming or agro-tourism, or just a way to contribute to sustainable agriculture, farmland near Bangalore and other cities can provide a stable and profitable investment for years to come."
+        "text": "If youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre considering investing in farmland, now is the perfect time to explore these trends and position yourself for success. Whether youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre looking for long-term capital appreciation, income through farming or agro-tourism, or just a way to contribute to sustainable agriculture, farmland near Bangalore and other cities can provide a stable and profitable investment for years to come."
       }
     ]
   },
@@ -1134,8 +1180,8 @@ export const BLOGS = [
     "slug": "ecovara-farms-near-lepakshi-complete-guide",
     "category": "Investment",
     "title": "Ecovara Farm Land Near Lepakshi",
-    "headline": "Ecovara Farms Near Lepakshi ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Complete Guide 2026",
-    "description": "Discover Ecovara Farms near Lepakshi ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Novara Nature Estates' premium managed farmland 75 mins from Bangalore. Clear titles, 800+ trees. Book a free farm visit.",
+    "headline": "Ecovara Farms Near Lepakshi ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Complete Guide 2026",
+    "description": "Discover Ecovara Farms near Lepakshi ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Novara Nature Estates' premium managed farmland 75 mins from Bangalore. Clear titles, 800+ trees. Book a free farm visit.",
     "date": "2026",
     "keywords": "Ecovara Farms Lepakshi",
     "author": "Novara / Your Brand",
@@ -1159,7 +1205,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Three weeks after that call, Karthik stood inside Ecovara Farms near Lepakshi Temple ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ 15 acres of managed farmland with 800 existing coconut and mango trees, a gated entrance, a clubhouse, and a view that made his Whitefield apartment feel very far away. He booked his plot the same afternoon."
+        "text": "Three weeks after that call, Karthik stood inside Ecovara Farms near Lepakshi Temple ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ 15 acres of managed farmland with 800 existing coconut and mango trees, a gated entrance, a clubhouse, and a view that made his Whitefield apartment feel very far away. He booked his plot the same afternoon."
       },
       {
         "type": "h2",
@@ -1174,7 +1220,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "The project sits in the North Bangalore corridor near Lepakshi Temple ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ one of the most historically significant and naturally scenic locations in the region. It spans 15 acres and has been thoughtfully developed for urban investors who want to own productive farmland without managing it themselves."
+        "text": "The project sits in the North Bangalore corridor near Lepakshi Temple ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ one of the most historically significant and naturally scenic locations in the region. It spans 15 acres and has been thoughtfully developed for urban investors who want to own productive farmland without managing it themselves."
       },
       {
         "type": "h3",
@@ -1182,11 +1228,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Most people who want to own farmland near Bangalore have the same problem ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ they love the idea but have no time, no farming knowledge, and no local contacts to manage the land. Ecovara was built specifically to solve that problem."
+        "text": "Most people who want to own farmland near Bangalore have the same problem ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ they love the idea but have no time, no farming knowledge, and no local contacts to manage the land. Ecovara was built specifically to solve that problem."
       },
       {
         "type": "p",
-        "text": "You own the land. Novara Nature Estates manages everything else ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ plantation maintenance, water supply, security, and farm operations. It is farmland ownership made genuinely simple."
+        "text": "You own the land. Novara Nature Estates manages everything else ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ plantation maintenance, water supply, security, and farm operations. It is farmland ownership made genuinely simple."
       },
       {
         "type": "h3",
@@ -1198,11 +1244,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "First, the existing plantation. When you buy a plot at Ecovara you are not buying bare land and waiting years for trees to grow. There are already 800+ coconut and mango trees on the property ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ mature, established, and productive."
+        "text": "First, the existing plantation. When you buy a plot at Ecovara you are not buying bare land and waiting years for trees to grow. There are already 800+ coconut and mango trees on the property ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ mature, established, and productive."
       },
       {
         "type": "p",
-        "text": "Second, the location. Lepakshi is not a random location choice. It sits directly on NH44 ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ the Bangalore-Hyderabad National Highway ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ with exceptional connectivity, growing infrastructure investment, and strong land appreciation history."
+        "text": "Second, the location. Lepakshi is not a random location choice. It sits directly on NH44 ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ the Bangalore-Hyderabad National Highway ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ with exceptional connectivity, growing infrastructure investment, and strong land appreciation history."
       },
       {
         "type": "p",
@@ -1214,15 +1260,15 @@ export const BLOGS = [
       },
       {
         "type": "h3",
-        "text": "Distance from Bangalore ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Exactly How Far"
+        "text": "Distance from Bangalore ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Exactly How Far"
       },
       {
         "type": "p",
-        "text": "Ecovara Farms is located approximately 75 kilometres from Kempegowda International Airport, Devanahalli ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ roughly 75 to 90 minutes by road depending on traffic. From Electronic City or Whitefield, add another 20-30 minutes."
+        "text": "Ecovara Farms is located approximately 75 kilometres from Kempegowda International Airport, Devanahalli ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ roughly 75 to 90 minutes by road depending on traffic. From Electronic City or Whitefield, add another 20-30 minutes."
       },
       {
         "type": "p",
-        "text": "For most Bangalore residents this distance is the sweet spot ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ far enough to feel genuinely away from the city, close enough for a comfortable weekend drive without overnight commitment."
+        "text": "For most Bangalore residents this distance is the sweet spot ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ far enough to feel genuinely away from the city, close enough for a comfortable weekend drive without overnight commitment."
       },
       {
         "type": "p",
@@ -1230,11 +1276,11 @@ export const BLOGS = [
       },
       {
         "type": "h3",
-        "text": "NH44 Connectivity ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Why It Matters"
+        "text": "NH44 Connectivity ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Why It Matters"
       },
       {
         "type": "p",
-        "text": "The Bangalore-Hyderabad National Highway is not just a road ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ it is one of the most actively developed infrastructure corridors in South India. The expressway expansion, ongoing logistics park development, and growing industrial zones along this corridor have been consistently driving land appreciation in the region for the past decade."
+        "text": "The Bangalore-Hyderabad National Highway is not just a road ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it is one of the most actively developed infrastructure corridors in South India. The expressway expansion, ongoing logistics park development, and growing industrial zones along this corridor have been consistently driving land appreciation in the region for the past decade."
       },
       {
         "type": "p",
@@ -1246,15 +1292,15 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Lepakshi Temple is a UNESCO-recognised Vijayanagara architectural masterpiece that draws over 2 lakh visitors annually. The presence of a significant heritage landmark 10 minutes from Ecovara is not just a lifestyle advantage ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ it is an economic one. Tourism demand drives local land prices, hospitality investment, and regional development in ways that benefit landowners directly."
+        "text": "Lepakshi Temple is a UNESCO-recognised Vijayanagara architectural masterpiece that draws over 2 lakh visitors annually. The presence of a significant heritage landmark 10 minutes from Ecovara is not just a lifestyle advantage ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it is an economic one. Tourism demand drives local land prices, hospitality investment, and regional development in ways that benefit landowners directly."
       },
       {
         "type": "p",
-        "text": "Other landmarks within easy reach include Gudibande Fort (30 minutes), Nandi Hills (60 minutes), Isha Foundation (50 minutes), and Penukonda Fort (30 minutes). On weekends Ecovara is not just your farm ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ it is your base for exploring one of Karnataka's richest heritage corridors."
+        "text": "Other landmarks within easy reach include Gudibande Fort (30 minutes), Nandi Hills (60 minutes), Isha Foundation (50 minutes), and Penukonda Fort (30 minutes). On weekends Ecovara is not just your farm ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it is your base for exploring one of Karnataka's richest heritage corridors."
       },
       {
         "type": "h2",
-        "text": "What You Get ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Ecovara Farms Features and Amenities"
+        "text": "What You Get ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Ecovara Farms Features and Amenities"
       },
       {
         "type": "h3",
@@ -1284,13 +1330,13 @@ export const BLOGS = [
       {
         "type": "ul",
         "text": [
-          "Clubhouse ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ a dedicated social and leisure space for plot owners",
-          "Swimming pool ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ resort-style facility within the farm community",
-          "Kids play area ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ designed for families who visit on weekends",
-          "Organic farming plots ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ dedicated space to grow your own produce",
-          "Well-planned internal roads ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ paved access throughout the property",
-          "24/7 security ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ gated entry with round-the-clock monitoring",
-          "Reliable water supply ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ managed irrigation for the plantation"
+          "Clubhouse ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ a dedicated social and leisure space for plot owners",
+          "Swimming pool ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ resort-style facility within the farm community",
+          "Kids play area ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ designed for families who visit on weekends",
+          "Organic farming plots ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ dedicated space to grow your own produce",
+          "Well-planned internal roads ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ paved access throughout the property",
+          "24/7 security ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ gated entry with round-the-clock monitoring",
+          "Reliable water supply ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ managed irrigation for the plantation"
         ]
       },
       {
@@ -1299,7 +1345,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "This is where Ecovara genuinely stands out. Novara Nature Estates provides complete farm management ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ plantation care, maintenance schedules, water management, and regular property updates. You do not need to visit every week to keep your investment healthy. The team handles it so your farm grows in value whether you are at your Bangalore desk or on a flight to Singapore."
+        "text": "This is where Ecovara genuinely stands out. Novara Nature Estates provides complete farm management ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ plantation care, maintenance schedules, water management, and regular property updates. You do not need to visit every week to keep your investment healthy. The team handles it so your farm grows in value whether you are at your Bangalore desk or on a flight to Singapore."
       },
       {
         "type": "h2",
@@ -1315,7 +1361,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Early buyers in this corridor have seen land values grow significantly ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ and with the Bangalore metropolitan expansion continuing northward, this trend shows no sign of reversing."
+        "text": "Early buyers in this corridor have seen land values grow significantly ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ and with the Bangalore metropolitan expansion continuing northward, this trend shows no sign of reversing."
       },
       {
         "type": "h3",
@@ -1327,7 +1373,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Beyond tax benefits the existing plantation at Ecovara generates ongoing produce ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ coconuts, mangoes, and seasonal crops ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ creating a passive income stream from the land itself."
+        "text": "Beyond tax benefits the existing plantation at Ecovara generates ongoing produce ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ coconuts, mangoes, and seasonal crops ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ creating a passive income stream from the land itself."
       },
       {
         "type": "h3",
@@ -1358,7 +1404,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Rahul visited with four other families in January. \"The model house, the open space, the farm activities ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ it was a genuinely memorable experience. The food was prepared according to our preferences. It felt like a resort and a farm at the same time.\""
+        "text": "Rahul visited with four other families in January. \"The model house, the open space, the farm activities ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it was a genuinely memorable experience. The food was prepared according to our preferences. It felt like a resort and a farm at the same time.\""
       },
       {
         "type": "h3",
@@ -1380,7 +1426,7 @@ export const BLOGS = [
         "type": "ol",
         "text": [
           "Schedule a free farm visit through the Novara website",
-          "Visit Ecovara Farms with your family ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ see the land in person",
+          "Visit Ecovara Farms with your family ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ see the land in person",
           "Review plot options, sizes, and pricing with the team",
           "Complete legal and documentation verification",
           "Register your plot and become an Ecovara landowner"
@@ -1392,7 +1438,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Standard KYC documents ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Aadhaar, PAN, address proof. The Novara team handles all land documentation, title verification, and registration support."
+        "text": "Standard KYC documents ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Aadhaar, PAN, address proof. The Novara team handles all land documentation, title verification, and registration support."
       },
       {
         "type": "h3",
@@ -1412,7 +1458,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": " Ecovara Farms is approximately 75 kilometres from Kempegowda International Airport, Devanahalli ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ roughly 75 to 90 minutes by road on NH44."
+        "text": " Ecovara Farms is approximately 75 kilometres from Kempegowda International Airport, Devanahalli ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ roughly 75 to 90 minutes by road on NH44."
       },
       {
         "type": "h3",
@@ -1428,7 +1474,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "No. Novara Nature Estates provides complete farm management services. You own the land ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ the team handles plantation maintenance, water, security, and operations."
+        "text": "No. Novara Nature Estates provides complete farm management services. You own the land ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ the team handles plantation maintenance, water, security, and operations."
       },
       {
         "type": "h3",
@@ -1444,7 +1490,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": " Absolutely ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ and we strongly encourage it. Farm visits are free and can be scheduled through the contact page. Most buyers make their decision after visiting in person."
+        "text": " Absolutely ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ and we strongly encourage it. Farm visits are free and can be scheduled through the contact page. Most buyers make their decision after visiting in person."
       },
       {
         "type": "h2",
@@ -1452,7 +1498,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Ecovara Farms near Lepakshi is not just a farmland project. It is a carefully managed, legally sound, strategically located land investment that gives Bangalore investors everything they have been looking for ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ without the complexity of doing it alone."
+        "text": "Ecovara Farms near Lepakshi is not just a farmland project. It is a carefully managed, legally sound, strategically located land investment that gives Bangalore investors everything they have been looking for ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ without the complexity of doing it alone."
       },
       {
         "type": "p",
@@ -1483,7 +1529,7 @@ export const BLOGS = [
     "id": 8,
     "slug": "farmland-investment-lepakshi",
     "category": "Sustainable Farmland",
-    "title": "Lepakshi is BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂs Best Farmland Investment Location",
+    "title": "Lepakshi is BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs Best Farmland Investment Location",
     "headline": "Why Lepakshi is Bangalore's Best Farmland Investment Location",
     "description": " Discover why Lepakshi is emerging as a top destination for farmland investment near Bangalore. Learn about location advantages and investment potential.",
     "date": "2026",
@@ -1509,7 +1555,7 @@ export const BLOGS = [
       },
       {
         "type": "p_with_link",
-        "textBefore": "Located along the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad highway (NH44), Lepakshi offers the perfect balance between accessibility and peaceful rural surroundings. With improving infrastructure, tourism growth, and increasing interest in managed farmland projects, the region is emerging as one of the most promising destinations for ",
+        "textBefore": "Located along the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad highway (NH44), Lepakshi offers the perfect balance between accessibility and peaceful rural surroundings. With improving infrastructure, tourism growth, and increasing interest in managed farmland projects, the region is emerging as one of the most promising destinations for ",
         "linkText": "farmland investment near Bangalore.",
         "href": "https://www.novaranatureestates.com/",
         "textAfter": ""
@@ -1524,11 +1570,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "One of the biggest reasons behind the growing interest in farmland investment in Lepakshi is its strategic location. Lepakshi lies close to the KarnatakaÃÂÃÂ¢ÃÂÃÂÃÂÃÂAndhra Pradesh border and is easily accessible from Bangalore via the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad National Highway (NH44)."
+        "text": "One of the biggest reasons behind the growing interest in farmland investment in Lepakshi is its strategic location. Lepakshi lies close to the KarnatakaÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂAndhra Pradesh border and is easily accessible from Bangalore via the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad National Highway (NH44)."
       },
       {
         "type": "p",
-        "text": "For many investors, proximity to a major city is an important factor when choosing farmland. Lepakshi offers the advantage of being reachable from Bangalore within a few hours while still providing a peaceful countryside environment away from the cityÃÂÃÂ¢ÃÂÃÂÃÂÃÂs congestion."
+        "text": "For many investors, proximity to a major city is an important factor when choosing farmland. Lepakshi offers the advantage of being reachable from Bangalore within a few hours while still providing a peaceful countryside environment away from the cityÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs congestion."
       },
       {
         "type": "p_with_link",
@@ -1543,11 +1589,11 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "The BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad highway (NH44) is one of the most important transportation corridors in South India. This highway has significantly improved connectivity between major cities and smaller towns along its route."
+        "text": "The BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad highway (NH44) is one of the most important transportation corridors in South India. This highway has significantly improved connectivity between major cities and smaller towns along its route."
       },
       {
         "type": "p",
-        "text": "LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs location along NH44 makes travel smooth and convenient for farmland owners visiting from Bangalore. Easy highway access also contributes to the long-term investment potential of the region because infrastructure development often drives land appreciation."
+        "text": "LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs location along NH44 makes travel smooth and convenient for farmland owners visiting from Bangalore. Easy highway access also contributes to the long-term investment potential of the region because infrastructure development often drives land appreciation."
       },
       {
         "type": "p",
@@ -1575,7 +1621,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Lepakshi is widely known for the famous Veerabhadra Temple, a historic temple that attracts visitors and tourists throughout the year. The templeÃÂÃÂ¢ÃÂÃÂÃÂÃÂs architectural beauty and cultural significance make Lepakshi a well-known destination in the region."
+        "text": "Lepakshi is widely known for the famous Veerabhadra Temple, a historic temple that attracts visitors and tourists throughout the year. The templeÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs architectural beauty and cultural significance make Lepakshi a well-known destination in the region."
       },
       {
         "type": "p",
@@ -1618,7 +1664,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Land is a finite resource, and as infrastructure development expands near major cities, nearby rural areas often experience gradual price appreciation. LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs location along an important highway corridor increases its potential for future growth."
+        "text": "Land is a finite resource, and as infrastructure development expands near major cities, nearby rural areas often experience gradual price appreciation. LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs location along an important highway corridor increases its potential for future growth."
       },
       {
         "type": "h3",
@@ -1682,7 +1728,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "The growing interest in farmland investment near Bangalore is likely to continue as more investors seek sustainable and nature-based assets. LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs strategic location, improving connectivity, and natural surroundings make it an attractive region for agricultural land ownership."
+        "text": "The growing interest in farmland investment near Bangalore is likely to continue as more investors seek sustainable and nature-based assets. LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs strategic location, improving connectivity, and natural surroundings make it an attractive region for agricultural land ownership."
       },
       {
         "type": "p",
@@ -1694,7 +1740,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Lepakshi is emerging as one of the most attractive farmland investment destinations for buyers from Bangalore. Its strategic location along the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad highway, cultural significance, and peaceful environment make it a compelling choice for those seeking agricultural land."
+        "text": "Lepakshi is emerging as one of the most attractive farmland investment destinations for buyers from Bangalore. Its strategic location along the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad highway, cultural significance, and peaceful environment make it a compelling choice for those seeking agricultural land."
       },
       {
         "type": "p",
@@ -1759,7 +1805,7 @@ export const BLOGS = [
     "slug": "farm-plots-near-lepakshi",
     "category": "Sustainable Farmland",
     "title": "Farm Plots Near Lepakshi | Investment Guide for Buyers",
-    "headline": "Farm Plots Near Lepakshi ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Everything Buyers Need to Know",
+    "headline": "Farm Plots Near Lepakshi ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Everything Buyers Need to Know",
     "description": "Explore farm plots near Lepakshi and discover why this region is attracting farmland investors from Bangalore. Complete guide for buyers.",
     "date": "2026",
     "keywords": "farm plots near Lepakshi",
@@ -1780,7 +1826,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Farm plots near Lepakshi are becoming increasingly popular among investors from Bangalore who are looking for agricultural land ownership combined with long-term investment potential. Located along the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad National Highway (NH44), Lepakshi offers a unique opportunity for buyers to own farmland in a peaceful natural setting while staying connected to a major metropolitan city."
+        "text": "Farm plots near Lepakshi are becoming increasingly popular among investors from Bangalore who are looking for agricultural land ownership combined with long-term investment potential. Located along the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad National Highway (NH44), Lepakshi offers a unique opportunity for buyers to own farmland in a peaceful natural setting while staying connected to a major metropolitan city."
       },
       {
         "type": "p_with_link",
@@ -1803,7 +1849,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "One of the main reasons behind the growing interest is the regionÃÂÃÂ¢ÃÂÃÂÃÂÃÂs accessibility from Bangalore. Investors can travel to Lepakshi conveniently through NH44, making it feasible to visit farmland regularly."
+        "text": "One of the main reasons behind the growing interest is the regionÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs accessibility from Bangalore. Investors can travel to Lepakshi conveniently through NH44, making it feasible to visit farmland regularly."
       },
       {
         "type": "p",
@@ -1815,7 +1861,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Location plays a major role when choosing farmland. Lepakshi benefits from excellent connectivity through the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad highway, which connects the region to several important cities."
+        "text": "Location plays a major role when choosing farmland. Lepakshi benefits from excellent connectivity through the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad highway, which connects the region to several important cities."
       },
       {
         "type": "h3",
@@ -1823,7 +1869,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Many investors prefer farmland that is within comfortable driving distance from Bangalore. LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs location allows buyers to reach their farmland within a few hours, making it suitable for weekend visits and agricultural activities."
+        "text": "Many investors prefer farmland that is within comfortable driving distance from Bangalore. LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs location allows buyers to reach their farmland within a few hours, making it suitable for weekend visits and agricultural activities."
       },
       {
         "type": "h3",
@@ -1855,7 +1901,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Land values in developing regions often increase gradually as infrastructure improves and demand rises. LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs proximity to Bangalore and its location along NH44 make it a promising area for long-term land appreciation."
+        "text": "Land values in developing regions often increase gradually as infrastructure improves and demand rises. LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs proximity to Bangalore and its location along NH44 make it a promising area for long-term land appreciation."
       },
       {
         "type": "h3",
@@ -1951,7 +1997,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Farm plots near Lepakshi offer an appealing combination of natural beauty, investment potential, and accessibility from Bangalore. The regionÃÂÃÂ¢ÃÂÃÂÃÂÃÂs location along NH44, peaceful environment, and growing interest from investors make it a promising destination for farmland ownership."
+        "text": "Farm plots near Lepakshi offer an appealing combination of natural beauty, investment potential, and accessibility from Bangalore. The regionÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs location along NH44, peaceful environment, and growing interest from investors make it a promising destination for farmland ownership."
       },
       {
         "type": "p",
@@ -2002,7 +2048,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Lepakshi is accessible through the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad highway and can be reached from Bangalore within a few hours."
+        "text": "Lepakshi is accessible through the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad highway and can be reached from Bangalore within a few hours."
       },
       {
         "type": "h3",
@@ -2019,7 +2065,7 @@ export const BLOGS = [
     "slug": "managed-farmland-lepakshi",
     "category": "Sustainable Farmland",
     "title": "Managed Farmland Near Lepakshi | How It Works for Investors",
-    "headline": "Managed Farmland Near Lepakshi ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ How It Works.",
+    "headline": "Managed Farmland Near Lepakshi ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ How It Works.",
     "description": "Learn how managed farmland near Lepakshi works and why it is becoming popular among Bangalore investors seeking sustainable farmland ownership.",
     "date": "2026",
     "keywords": "managed farmland Lepakshi",
@@ -2051,7 +2097,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Lepakshi, located along the BangaloreÃÂÃÂ¢ÃÂÃÂÃÂÃÂHyderabad highway (NH44), has emerged as a promising destination for managed farmland investments. Its proximity to Bangalore, peaceful environment, and growing interest in agricultural land ownership make it an ideal location for farmland investors."
+        "text": "Lepakshi, located along the BangaloreÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂHyderabad highway (NH44), has emerged as a promising destination for managed farmland investments. Its proximity to Bangalore, peaceful environment, and growing interest in agricultural land ownership make it an ideal location for farmland investors."
       },
       {
         "type": "h2",
@@ -2086,7 +2132,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Lepakshi lies close to the KarnatakaÃÂÃÂ¢ÃÂÃÂÃÂÃÂAndhra Pradesh border and is easily accessible from Bangalore via the NH44 highway. This connectivity allows investors to visit their farmland conveniently."
+        "text": "Lepakshi lies close to the KarnatakaÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂAndhra Pradesh border and is easily accessible from Bangalore via the NH44 highway. This connectivity allows investors to visit their farmland conveniently."
       },
       {
         "type": "h3",
@@ -2166,7 +2212,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "Land values in developing regions can gradually increase over time. LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs location along an important highway corridor contributes to its long-term investment potential."
+        "text": "Land values in developing regions can gradually increase over time. LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs location along an important highway corridor contributes to its long-term investment potential."
       },
       {
         "type": "h3",
@@ -2266,7 +2312,7 @@ export const BLOGS = [
       },
       {
         "type": "p",
-        "text": "LepakshiÃÂÃÂ¢ÃÂÃÂÃÂÃÂs strategic location, natural environment, and growing interest from investors make it an attractive destination for farmland investment near Bangalore."
+        "text": "LepakshiÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs strategic location, natural environment, and growing interest from investors make it an attractive destination for farmland investment near Bangalore."
       },
       {
         "type": "p",
