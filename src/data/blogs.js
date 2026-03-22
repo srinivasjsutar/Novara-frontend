@@ -1,4 +1,4 @@
-// src/data/blogs.js
+
 export const BLOGS = [
   
   {
@@ -2126,4 +2126,4 @@ export const BLOGS = [
       },
     ],
   },
-];
+]
