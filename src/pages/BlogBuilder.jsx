@@ -27,15 +27,45 @@ const slugify = (str = "") =>
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-");
 
-const readAsDataURL = (file) =>
-  new Promise((res, rej) => {
-    const r = new FileReader();
-    r.onload = (e) => res(e.target.result);
-    r.onerror = rej;
-    r.readAsDataURL(file);
+// ─── Cloudinary config ────────────────────────────────────────────────────────
+const CL_CLOUD  = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const CL_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+
+const compressAndUpload = (file, { maxW = 1400, quality = 0.82 } = {}) =>
+  new Promise((resolve, reject) => {
+    const img = new Image();
+    const objectUrl = URL.createObjectURL(file);
+    img.onload = async () => {
+      URL.revokeObjectURL(objectUrl);
+      let { width, height } = img;
+      if (width > maxW) { height = Math.round((height * maxW) / width); width = maxW; }
+      const canvas = document.createElement("canvas");
+      canvas.width = width; canvas.height = height;
+      canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+      canvas.toBlob(async (blob) => {
+        if (!blob) return reject(new Error("Canvas compression failed"));
+        const form = new FormData();
+        form.append("file", blob, file.name.replace(/\.[^.]+$/, ".webp"));
+        form.append("upload_preset", CL_PRESET);
+        try {
+          const cloudName = CL_CLOUD;
+          const res = await fetch(
+            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+            { method: "POST", body: form }
+          );
+          const data = await res.json();
+          if (!res.ok) {
+            const msg = data?.error?.message || `HTTP ${res.status}`;
+            return reject(new Error(`Cloudinary: ${msg}`));
+          }
+          resolve(data.secure_url);
+        } catch (e) { reject(e); }
+      }, "image/webp", quality);
+    };
+    img.onerror = () => { URL.revokeObjectURL(objectUrl); reject(new Error("Image load failed")); };
+    img.src = objectUrl;
   });
 
-// Convert a Novara section object → builder element
 const sectionToElement = (s) => {
   const base = { id: Date.now() + Math.random() };
   if (s.type === "p")          return { ...base, type: "p",          text: s.text };
@@ -44,13 +74,13 @@ const sectionToElement = (s) => {
   if (s.type === "quote")      return { ...base, type: "quote",      text: s.text };
   if (s.type === "ul")         return { ...base, type: "ul",         text: s.text };
   if (s.type === "ol")         return { ...base, type: "ol",         text: s.text };
+  if (s.type === "table")      return { ...base, type: "table",      headers: s.headers || [], rows: s.rows || [], themed: s.themed || false };
   if (s.type === "image")      return { ...base, type: "image",      src: s.src,  caption: s.caption || "" };
   if (s.type === "p_with_link")
     return { ...base, type: "p_with_link", textBefore: s.textBefore || "", linkText: s.linkText || "", href: s.href || "", textAfter: s.textAfter || "" };
   return { ...base, type: "p", text: s.text || "" };
 };
 
-// Convert builder elements → Novara sections
 const toSections = (elements) =>
   elements.map((el) => {
     if (el.type === "p")          return { type: "p",    text: el.text };
@@ -59,6 +89,7 @@ const toSections = (elements) =>
     if (el.type === "quote")      return { type: "quote",text: el.text };
     if (el.type === "ul")         return { type: "ul",   text: el.text };
     if (el.type === "ol")         return { type: "ol",   text: el.text };
+    if (el.type === "table")      return { type: "table", headers: el.headers, rows: el.rows, themed: el.themed };
     if (el.type === "image")      return { type: "image",src: el.src, caption: el.caption };
     if (el.type === "p_with_link")
       return { type: "p_with_link", textBefore: el.textBefore, linkText: el.linkText, href: el.href, textAfter: el.textAfter };
@@ -74,6 +105,7 @@ const createElement = (type) => {
     case "quote":      return { ...base, text: "An insightful quote goes here…" };
     case "ul":         return { ...base, text: ["First point", "Second point", "Third point"] };
     case "ol":         return { ...base, text: ["Step one", "Step two", "Step three"] };
+    case "table":      return { ...base, headers: ["Firstname", "Lastname", "Age"], rows: [["Lucas", "Rossi", "24"], ["Sophie", "Dubois", "32"], ["Sam", "Watson", "41"]], themed: false };
     case "image":      return { ...base, src: "", caption: "" };
     case "p_with_link":
       return { ...base, textBefore: "Learn more about", linkText: "managed farmland", href: "https://novaranatureestates.com/projects", textAfter: "near Bangalore." };
@@ -117,6 +149,7 @@ const ELEMENT_TYPES = [
   { type: "quote",      icon: Type,      label: "Quote" },
   { type: "ul",         icon: List,      label: "Bullets" },
   { type: "ol",         icon: List,      label: "Numbered" },
+  { type: "table",      icon: List,      label: "Table" },
   { type: "image",      icon: ImageIcon, label: "Image" },
   { type: "p_with_link",icon: LinkIcon,  label: "Para+Link" },
 ];
@@ -139,6 +172,32 @@ function PreviewSection({ s, usedH3 }) {
         <div className="border-l-4 border-[#E3A600] pl-3 italic leading-relaxed">{s.text}</div>
       </div>
     );
+  if (s.type === "table") {
+    const themed = s.themed;
+    return (
+      <div className="overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full text-[13px] sm:text-[14px] text-slate-700 border-collapse">
+          <thead>
+            <tr>
+              {(s.headers || []).map((h, i) => (
+                <th key={i} className="text-left px-4 py-3 font-bold border border-slate-200 text-[#111827]"
+                  style={{ background: themed ? "#e8dfa8" : "#ffffff" }}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {(s.rows || []).map((row, ri) => (
+              <tr key={ri} style={{ background: themed ? (ri % 2 === 0 ? "#faf7ec" : "#f5f0d8") : "#ffffff" }}>
+                {row.map((cell, ci) => (
+                  <td key={ci} className="px-4 py-2.5 border border-slate-200">{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
   if (s.type === "image")
     return (
       <figure className="rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
@@ -173,7 +232,7 @@ function PreviewSection({ s, usedH3 }) {
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
-// LOGIN SCREEN — shown when not authenticated
+// LOGIN SCREEN
 // ═════════════════════════════════════════════════════════════════════════════
 function LoginScreen() {
   const { login } = useAuth();
@@ -195,9 +254,7 @@ function LoginScreen() {
     <div className="min-h-screen bg-gradient-to-br from-[#F0FDF4] to-[#ECFDF5] flex items-center justify-center px-4"
       style={{ fontFamily: "'Urbanist', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');`}</style>
-
       <div className="w-full max-w-sm">
-        {/* Logo */}
         <div className="flex flex-col items-center mb-8">
           <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4"
             style={{ background: "linear-gradient(135deg,#1A614F,#0d3d30)" }}>
@@ -206,15 +263,12 @@ function LoginScreen() {
           <h1 className="text-2xl font-bold text-[#111827]">Novara Blog Builder</h1>
           <p className="text-sm text-slate-500 mt-1">Sign in to create & edit blogs</p>
         </div>
-
-        {/* Card */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-7">
           {error && (
             <div className="flex items-center gap-2 text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2.5 text-sm mb-5">
               <AlertCircle size={15} /> {error}
             </div>
           )}
-
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label>Email address</Label>
@@ -234,17 +288,14 @@ function LoginScreen() {
             </button>
           </form>
         </div>
-
-        <p className="text-center text-xs text-slate-400 mt-4">
-          Authorized Novara team members only
-        </p>
+        <p className="text-center text-xs text-slate-400 mt-4">Authorized Novara team members only</p>
       </div>
     </div>
   );
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
-// BLOG PICKER — shown after login; choose Create or pick a blog to Edit
+// BLOG PICKER
 // ═════════════════════════════════════════════════════════════════════════════
 function BlogPicker({ onSelect }) {
   const { user, logout } = useAuth();
@@ -260,8 +311,6 @@ function BlogPicker({ onSelect }) {
   return (
     <div className="min-h-screen bg-slate-50" style={{ fontFamily: "'Urbanist', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');`}</style>
-
-      {/* Top bar */}
       <div className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-20 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "#1A614F" }}>
@@ -284,12 +333,9 @@ function BlogPicker({ onSelect }) {
           </button>
         </div>
       </div>
-
       <div className="max-w-4xl mx-auto px-6 py-10">
         <h2 className="text-2xl font-bold text-[#111827] mb-2">What would you like to do?</h2>
         <p className="text-sm text-slate-500 mb-8">Create a new blog post, or select an existing one to edit.</p>
-
-        {/* Create new */}
         <button onClick={() => onSelect(null)}
           className="w-full mb-8 flex items-center gap-4 p-5 rounded-2xl border-2 border-dashed border-[#1A614F]/30
             bg-[#F0FDF4] hover:border-[#1A614F] hover:bg-[#E9FFF3] transition-all group text-left">
@@ -302,22 +348,14 @@ function BlogPicker({ onSelect }) {
             <div className="text-sm text-slate-500 mt-0.5">Start fresh with a blank canvas</div>
           </div>
         </button>
-
-        {/* Edit existing */}
         <div className="mb-4 flex items-center justify-between">
           <h3 className="font-bold text-slate-700 text-sm uppercase tracking-wider">Edit existing ({BLOGS.length} blogs)</h3>
           <div className="relative">
             <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search blogs…"
-              className="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-white focus:outline-none focus:border-[#1A614F] transition-all w-44"
-            />
+            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search blogs…"
+              className="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-white focus:outline-none focus:border-[#1A614F] transition-all w-44" />
           </div>
         </div>
-
         <div className="space-y-2">
           {filtered.map((blog) => (
             <button key={blog.id} onClick={() => onSelect(blog)}
@@ -348,13 +386,12 @@ function BlogPicker({ onSelect }) {
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
-// BLOG BUILDER — the actual editor (create OR edit)
+// BLOG EDITOR
 // ═════════════════════════════════════════════════════════════════════════════
 function BlogEditor({ editingBlog, onBack }) {
   const { token, user, logout } = useAuth();
   const isEditMode = !!editingBlog;
 
-  // ── State ─────────────────────────────────────────────────────────────────
   const [elements, setElements]         = useState([]);
   const [selectedId, setSelectedId]     = useState(null);
   const [showAddMenu, setShowAddMenu]   = useState(false);
@@ -362,10 +399,8 @@ function BlogEditor({ editingBlog, onBack }) {
   const [hoveredInsert, setHoveredInsert]   = useState(null);
   const [showSettings, setShowSettings] = useState(false);
   const [previewMode, setPreviewMode]   = useState(false);
-
   const [publishStatus, setPublishStatus] = useState(null);
   const [publishMsg, setPublishMsg]       = useState("");
-
 
   const [meta, setMeta] = useState({
     title: "", headline: "", description: "", keywords: "",
@@ -375,7 +410,6 @@ function BlogEditor({ editingBlog, onBack }) {
     heroImage: "", imageAlt: "", tags: "",
   });
 
-  // ── On mount: if editing, hydrate state from existing blog ───────────────
   useEffect(() => {
     if (!editingBlog) return;
     setMeta({
@@ -391,14 +425,12 @@ function BlogEditor({ editingBlog, onBack }) {
       imageAlt:    editingBlog.imageAlt    || editingBlog.title    || "",
       tags:        (editingBlog.tags || []).join(", "),
     });
-    // Convert existing sections → builder elements
     const els = (editingBlog.sections || []).map(sectionToElement);
     setElements(els);
   }, [editingBlog]);
 
   const selectedEl = elements.find((el) => el.id === selectedId) || null;
 
-  // ── TOC (h3 only — matches BlogDetails) ──────────────────────────────────
   const toc = useMemo(() => {
     const used = new Map();
     return elements
@@ -411,7 +443,6 @@ function BlogEditor({ editingBlog, onBack }) {
       });
   }, [elements]);
 
-  // ── Element mutations ─────────────────────────────────────────────────────
   const addElement = useCallback((type) => {
     const el = createElement(type);
     setElements((prev) => {
@@ -445,28 +476,39 @@ function BlogEditor({ editingBlog, onBack }) {
     });
   }, []);
 
-  const addListItem   = (id) => updateEl(id, { text: [...(elements.find((e) => e.id === id)?.text || []), "New item"] });
-  const updateItem    = (id, idx, val) => updateEl(id, { text: elements.find((e) => e.id === id).text.map((t, i) => i === idx ? val : t) });
-  const deleteItem    = (id, idx) => updateEl(id, { text: elements.find((e) => e.id === id).text.filter((_, i) => i !== idx) });
+  const addListItem = (id) => updateEl(id, { text: [...(elements.find((e) => e.id === id)?.text || []), "New item"] });
+  const updateItem  = (id, idx, val) => updateEl(id, { text: elements.find((e) => e.id === id).text.map((t, i) => i === idx ? val : t) });
+  const deleteItem  = (id, idx) => updateEl(id, { text: elements.find((e) => e.id === id).text.filter((_, i) => i !== idx) });
+
+  const [heroUploading, setHeroUploading]       = useState(false);
+  const [contentUploading, setContentUploading] = useState(null);
 
   const handleHeroUpload = async (file) => {
     if (!file) return;
-    const url = await readAsDataURL(file);
-    setMeta((p) => ({ ...p, heroImage: url }));
-  };
-  const handleContentImageUpload = async (id, file) => {
-    if (!file) return;
-    updateEl(id, { src: await readAsDataURL(file) });
+    setHeroUploading(true);
+    try {
+      const url = await compressAndUpload(file, { maxW: 1400, quality: 0.82 });
+      setMeta((p) => ({ ...p, heroImage: url }));
+    } catch (e) { alert("Hero image upload failed: " + e.message); }
+    finally { setHeroUploading(false); }
   };
 
-  // ── Export ────────────────────────────────────────────────────────────────
+  const handleContentImageUpload = async (id, file) => {
+    if (!file) return;
+    setContentUploading(id);
+    try {
+      const url = await compressAndUpload(file, { maxW: 1200, quality: 0.80 });
+      updateEl(id, { src: url });
+    } catch (e) { alert("Image upload failed: " + e.message); }
+    finally { setContentUploading(null); }
+  };
+
   const exportBlogData = () => {
-    const sections  = toSections(elements);
-    const title     = meta.headline || meta.title;
-    const slug      = meta.slug || slugify(title) || `blog-${Date.now()}`;
-    const tagsArr   = meta.tags ? meta.tags.split(",").map((t) => t.trim()).filter(Boolean) : [];
+    const sections = toSections(elements);
+    const title    = meta.headline || meta.title;
+    const slug     = meta.slug || slugify(title) || `blog-${Date.now()}`;
+    const tagsArr  = meta.tags ? meta.tags.split(",").map((t) => t.trim()).filter(Boolean) : [];
     return {
-      // Keep original id when editing so backend can upsert by id/slug
       id:          isEditMode ? editingBlog.id : Date.now(),
       slug,
       category:    meta.category,
@@ -495,13 +537,13 @@ function BlogEditor({ editingBlog, onBack }) {
     a.click(); URL.revokeObjectURL(a.href);
   };
 
-  // ── GitHub config ────────────────────────────────────────────────────────
+  // ── GitHub config ─────────────────────────────────────────────────────────
   const GH_TOKEN  = import.meta.env.VITE_GH_TOKEN;
   const GH_REPO   = "srinivasjsutar/Novara-frontend";
   const GH_BRANCH = "main";
   const GH_FILE   = "src/data/blogs.js";
 
-  // ── Publish — reads blogs.js from GitHub, updates it, commits back ────────
+  // ── Publish ───────────────────────────────────────────────────────────────
   const publishBlog = async () => {
     if (!meta.headline && !meta.title) {
       alert("Please add a headline first (open ⚙ Settings)."); setShowSettings(true); return;
@@ -512,9 +554,8 @@ function BlogEditor({ editingBlog, onBack }) {
     setPublishMsg("Fetching blogs.js from GitHub…");
 
     try {
-      // ── Step 1: fetch current blogs.js ──────────────────────────────────
       const fileRes = await fetch(
-        `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}?ref=${GH_BRANCH}`,
+        `https://api.github.com/repos/${GH_REPO}/contents/src/data/blogs.js?ref=${GH_BRANCH}`,
         { headers: { Authorization: `token ${GH_TOKEN}`, Accept: "application/vnd.github.v3+json" } }
       );
       if (!fileRes.ok) throw new Error(`GitHub fetch failed: ${fileRes.status} ${fileRes.statusText}`);
@@ -522,74 +563,41 @@ function BlogEditor({ editingBlog, onBack }) {
       const sha = fileData.sha;
       const currentContent = atob(fileData.content.replace(/\n/g, ""));
 
-      // ── Step 2: build the new blog entry ───────────────────────────────
-      const nextId = Math.max(...[0, ...BLOGS.map((b) => Number(b.id) || 0)]) + 1;
+      const stripped = currentContent
+        .replace(/^[\s\S]*?export\s+const\s+BLOGS\s*=\s*/, "")
+        .replace(/;?\s*$/, "")
+        .trim();
+
+      // eslint-disable-next-line no-new-func
+      const blogsArray = new Function(`return ${stripped}`)();
+
+      const nextId = Math.max(0, ...blogsArray.map(b => Number(b.id) || 0)) + 1;
       const blogData = exportBlogData();
-      const finalData = isEditMode
-        ? { ...blogData, id: editingBlog.id }
-        : { ...blogData, id: nextId };
 
-      const entryJson = JSON.stringify(finalData, null, 2);
-
-      // ── Step 3: build new file content ──────────────────────────────────
-      let newContent;
+      let newBlogsArray;
       if (isEditMode) {
         setPublishMsg("Updating existing blog entry…");
-        // Replace the entire existing blog object by matching its id
-        // Strategy: find  id: <N>,  inside BLOGS array and replace that whole object
-        const idPattern = new RegExp(
-          `(\{[^{}]*(?:\{[^{}]*\}[^{}]*)*)(?="?id"?:\s*${editingBlog.id}\b)`,
-          "s"
-        );
-        // Simpler: split on closing },  and reassemble
-        // Most reliable: find "id: X," line and replace the surrounding object
-        // We use a marker approach: find the object in the JS source
-        const marker = `"id": ${editingBlog.id},`;
-        const markerAlt = `id: ${editingBlog.id},`;
-        const startIdx = currentContent.indexOf(marker) !== -1
-          ? currentContent.indexOf(marker)
-          : currentContent.indexOf(markerAlt);
-
-        if (startIdx === -1) throw new Error(`Could not find blog with id ${editingBlog.id} in blogs.js`);
-
-        // Walk back to find the opening { of this object
-        let openBrace = startIdx;
-        while (openBrace > 0 && currentContent[openBrace] !== "{") openBrace--;
-
-        // Walk forward to find the matching closing }
-        let depth = 0;
-        let closeBrace = openBrace;
-        for (let i = openBrace; i < currentContent.length; i++) {
-          if (currentContent[i] === "{") depth++;
-          if (currentContent[i] === "}") { depth--; if (depth === 0) { closeBrace = i; break; } }
-        }
-
-        newContent =
-          currentContent.slice(0, openBrace) +
-          entryJson +
-          currentContent.slice(closeBrace + 1);
+        const idx = blogsArray.findIndex(b => String(b.id) === String(editingBlog.id));
+        if (idx === -1) throw new Error(`Could not find blog with id ${editingBlog.id} in blogs.js`);
+        newBlogsArray = [...blogsArray];
+        newBlogsArray[idx] = { ...blogData, id: editingBlog.id };
       } else {
         setPublishMsg("Inserting new blog entry…");
-        // Insert as first item in the BLOGS array
-        const arrayStart = currentContent.indexOf("export const BLOGS = [");
-        if (arrayStart === -1) throw new Error("Could not find 'export const BLOGS = [' in blogs.js");
-        const insertAt = currentContent.indexOf("[", arrayStart) + 1;
-        newContent =
-          currentContent.slice(0, insertAt) +
-          "\n  " +
-          entryJson.replace(/\n/g, "\n  ") +
-          "," +
-          currentContent.slice(insertAt);
+        newBlogsArray = [{ ...blogData, id: nextId }, ...blogsArray];
       }
 
-      // ── Step 4: commit back to GitHub ───────────────────────────────────
+      const entriesStr = newBlogsArray
+        .map(b => "  " + JSON.stringify(b, null, 2).replace(/\n/g, "\n  "))
+        .join(",\n");
+      const newContent = `export const BLOGS = [\n${entriesStr}\n];\n`;
+
       setPublishMsg("Committing to GitHub…");
       const commitMessage = isEditMode
-        ? `update blog: ${finalData.slug}`
-        : `add blog: ${finalData.slug}`;
+        ? `update blog: ${blogData.slug}`
+        : `add blog: ${blogData.slug}`;
 
       const putRes = await fetch(
-        `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+        `https://api.github.com/repos/${GH_REPO}/contents/src/data/blogs.js`,
         {
           method: "PUT",
           headers: {
@@ -623,7 +631,6 @@ function BlogEditor({ editingBlog, onBack }) {
     }
   };
 
-  // ── Progress ──────────────────────────────────────────────────────────────
   const progress = [
     { label: "Headline",    done: !!(meta.headline || meta.title) },
     { label: "Hero image",  done: !!meta.heroImage },
@@ -685,6 +692,30 @@ function BlogEditor({ editingBlog, onBack }) {
           {el.caption && <figcaption className="px-4 py-3 text-[12px] text-slate-500">{el.caption}</figcaption>}
         </figure>
       );
+    else if (el.type === "table")
+      content = (
+        <div className={`overflow-x-auto rounded-xl border border-slate-200 ${ring}`} onClick={pick}>
+          <table className="w-full text-[13px] sm:text-[14px] text-slate-700 border-collapse">
+            <thead>
+              <tr>
+                {(el.headers || []).map((h, i) => (
+                  <th key={i} className="text-left px-4 py-3 font-bold border border-slate-200 text-[#111827]"
+                    style={{ background: el.themed ? "#e8dfa8" : "#ffffff" }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {(el.rows || []).map((row, ri) => (
+                <tr key={ri} style={{ background: el.themed ? (ri % 2 === 0 ? "#faf7ec" : "#f5f0d8") : "#ffffff" }}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} className="px-4 py-2.5 border border-slate-200">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     else if (el.type === "ul" || el.type === "ol") {
       const Tag = el.type;
       const cls = el.type === "ul" ? "list-disc" : "list-decimal";
@@ -707,26 +738,20 @@ function BlogEditor({ editingBlog, onBack }) {
           {selectedId === el.id && (
             <div className="flex items-center gap-1 px-2 py-1 bg-slate-50 border border-slate-200 rounded-lg w-fit"
               onMouseDown={(e) => e.preventDefault()}>
-              <button
-                title="Bold selected text"
+              <button title="Bold selected text"
                 onMouseDown={(e) => { e.preventDefault(); document.execCommand("bold"); }}
                 className="px-2 py-0.5 rounded text-xs font-bold text-slate-600 hover:bg-[#E9FFF3] hover:text-[#1A614F] transition-all border border-transparent hover:border-[#1A614F]/20"
               ><strong>B</strong></button>
-              <button
-                title="Remove bold"
+              <button title="Remove bold"
                 onMouseDown={(e) => { e.preventDefault(); document.execCommand("removeFormat"); }}
                 className="px-2 py-0.5 rounded text-xs text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all border border-transparent"
               >✕ bold</button>
             </div>
           )}
-          <p
-            className={`text-[13px] sm:text-[14px] leading-relaxed text-slate-600 ${ring}`}
-            onClick={pick}
-            contentEditable
-            suppressContentEditableWarning
+          <p className={`text-[13px] sm:text-[14px] leading-relaxed text-slate-600 ${ring}`}
+            onClick={pick} contentEditable suppressContentEditableWarning
             dangerouslySetInnerHTML={{ __html: el.text }}
-            onBlur={(e) => updateEl(el.id, { text: e.currentTarget.innerHTML })}
-          />
+            onBlur={(e) => updateEl(el.id, { text: e.currentTarget.innerHTML })} />
         </div>
       );
 
@@ -754,7 +779,6 @@ function BlogEditor({ editingBlog, onBack }) {
     const el = selectedEl;
     return (
       <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4 panel-scroll">
-        {/* Header row */}
         <div className="flex items-center justify-between">
           <span className="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase"
             style={{ background: "#E9FFF3", color: "#1B9A63" }}>{el.type}</span>
@@ -770,7 +794,6 @@ function BlogEditor({ editingBlog, onBack }) {
           </div>
         </div>
 
-        {/* Content fields */}
         {["p", "h2", "h3", "quote"].includes(el.type) && (
           <div>
             <Label>Content</Label>
@@ -815,12 +838,85 @@ function BlogEditor({ editingBlog, onBack }) {
           <div className="space-y-3">
             <div>
               <Label>Upload image</Label>
-              <input type="file" accept="image/*" onChange={(e) => handleContentImageUpload(el.id, e.target.files[0])} />
-              {el.src && <img src={el.src} alt="" className="mt-2 w-full h-28 object-cover rounded-lg border border-slate-100" />}
+              <input type="file" accept="image/*" disabled={contentUploading === el.id}
+                onChange={(e) => handleContentImageUpload(el.id, e.target.files[0])} />
+              {contentUploading === el.id && (
+                <div className="mt-2 flex items-center gap-2 text-xs text-[#1A614F] font-semibold">
+                  <Loader size={12} className="animate-spin" /> Compressing &amp; uploading to Cloudinary…
+                </div>
+              )}
+              {contentUploading !== el.id && el.src && (
+                <img src={el.src} alt="" className="mt-2 w-full h-28 object-cover rounded-lg border border-slate-100" />
+              )}
             </div>
             <div><Label>Caption / alt text</Label>
               <Input value={el.caption || ""} placeholder="Describe the image for SEO…"
                 onChange={(e) => updateEl(el.id, { caption: e.target.value })} />
+            </div>
+          </div>
+        )}
+
+        {el.type === "table" && (
+          <div className="space-y-3">
+            <div className="flex items-center justify-between p-3 rounded-lg border border-slate-100 bg-slate-50">
+              <div>
+                <div className="text-[12px] font-semibold text-slate-700">Themed style</div>
+                <div className="text-[10px] text-slate-400">Warm beige header rows</div>
+              </div>
+              <button onClick={() => updateEl(el.id, { themed: !el.themed })}
+                className={`relative w-10 h-5 rounded-full transition-all ${el.themed ? "bg-[#E3A600]" : "bg-slate-200"}`}>
+                <span className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-all ${el.themed ? "left-5" : "left-0.5"}`} />
+              </button>
+            </div>
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <Label>Column Headers</Label>
+                <button onClick={() => updateEl(el.id, { headers: [...(el.headers || []), "New Column"], rows: (el.rows || []).map(r => [...r, ""]) })}
+                  className="text-[10px] text-[#1A614F] font-semibold flex items-center gap-0.5 hover:opacity-70">
+                  <Plus size={10} /> Col
+                </button>
+              </div>
+              <div className="flex gap-1.5 flex-wrap">
+                {(el.headers || []).map((h, hi) => (
+                  <div key={hi} className="flex gap-1 items-center flex-1 min-w-[80px]">
+                    <Input value={h} placeholder={`Col ${hi + 1}`}
+                      onChange={(e) => updateEl(el.id, { headers: el.headers.map((hh, i) => i === hi ? e.target.value : hh) })} />
+                    {(el.headers || []).length > 1 && (
+                      <button onClick={() => updateEl(el.id, {
+                        headers: el.headers.filter((_, i) => i !== hi),
+                        rows: (el.rows || []).map(r => r.filter((_, i) => i !== hi))
+                      })} className="shrink-0 w-5 h-5 flex items-center justify-center rounded border border-red-100 text-red-400 hover:bg-red-50">
+                        <X size={9} />
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <Label>Rows</Label>
+                <button onClick={() => updateEl(el.id, { rows: [...(el.rows || []), (el.headers || []).map(() => "")] })}
+                  className="text-[10px] text-[#1A614F] font-semibold flex items-center gap-0.5 hover:opacity-70">
+                  <Plus size={10} /> Row
+                </button>
+              </div>
+              <div className="space-y-2">
+                {(el.rows || []).map((row, ri) => (
+                  <div key={ri} className="flex gap-1 items-center">
+                    <span className="text-[10px] text-slate-400 w-4 shrink-0 text-right">{ri + 1}</span>
+                    {row.map((cell, ci) => (
+                      <Input key={ci} value={cell} placeholder={el.headers?.[ci] || `Col ${ci + 1}`}
+                        className="flex-1 min-w-0"
+                        onChange={(e) => updateEl(el.id, { rows: el.rows.map((r, i) => i === ri ? r.map((c, j) => j === ci ? e.target.value : c) : r) })} />
+                    ))}
+                    <button onClick={() => updateEl(el.id, { rows: el.rows.filter((_, i) => i !== ri) })}
+                      className="shrink-0 w-6 h-6 flex items-center justify-center rounded border border-red-100 text-red-400 hover:bg-red-50">
+                      <X size={10} />
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -904,7 +1000,6 @@ function BlogEditor({ editingBlog, onBack }) {
           <div className="bg-white border-r border-slate-200 flex flex-col panel-scroll overflow-y-auto shadow-sm"
             style={{ maxHeight: "100vh", position: "sticky", top: 0 }}>
 
-            {/* Panel header */}
             <div className="px-5 py-4 border-b border-slate-100 bg-white sticky top-0 z-10">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -936,7 +1031,6 @@ function BlogEditor({ editingBlog, onBack }) {
                 </div>
               </div>
 
-              {/* Edit mode badge */}
               {isEditMode && (
                 <div className="mt-2 flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold"
                   style={{ background: "#FFF8E8", color: "#b57d00", border: "1px solid #FFCE4C" }}>
@@ -944,7 +1038,6 @@ function BlogEditor({ editingBlog, onBack }) {
                 </div>
               )}
 
-              {/* Progress dots */}
               <div className="mt-3 flex flex-wrap gap-3">
                 {progress.map(({ label, done }) => (
                   <div key={label} className="flex items-center gap-1">
@@ -955,7 +1048,7 @@ function BlogEditor({ editingBlog, onBack }) {
               </div>
             </div>
 
-            {/* ── Settings ─────────────────────────────────── */}
+            {/* Settings */}
             {showSettings && (
               <div className="border-b border-slate-100 bg-slate-50/60">
                 <div className="px-5 py-4 space-y-3">
@@ -1006,8 +1099,14 @@ function BlogEditor({ editingBlog, onBack }) {
                   </div>
                   <div>
                     <Label>Hero image</Label>
-                    <input type="file" accept="image/*" onChange={(e) => handleHeroUpload(e.target.files[0])} />
-                    {meta.heroImage && (
+                    <input type="file" accept="image/*" disabled={heroUploading}
+                      onChange={(e) => handleHeroUpload(e.target.files[0])} />
+                    {heroUploading && (
+                      <div className="mt-2 flex items-center gap-2 text-xs text-[#1A614F] font-semibold">
+                        <Loader size={12} className="animate-spin" /> Compressing &amp; uploading to Cloudinary…
+                      </div>
+                    )}
+                    {!heroUploading && meta.heroImage && (
                       <div className="mt-2 relative">
                         <img src={meta.heroImage} alt="hero" className="w-full h-24 object-cover rounded-lg border border-slate-100" />
                         <button onClick={() => setMeta((p) => ({ ...p, heroImage: "" }))}
@@ -1023,14 +1122,12 @@ function BlogEditor({ editingBlog, onBack }) {
                 <div className="px-5 py-4 border-t border-slate-100 space-y-3">
                   <SectionDivider>Save & Publish</SectionDivider>
                   <button onClick={downloadJSON} className="btn-ghost w-full"><Upload size={12} /> Download JSON</button>
-
                   <button onClick={publishBlog} disabled={publishStatus === "loading"} className="btn-publish">
                     {publishStatus === "loading"
                       ? <><Loader size={14} className="animate-spin" /> {publishMsg || "Publishing…"}</>
                       : <><Send size={14} /> {isEditMode ? "Update Blog on GitHub" : "Publish to GitHub"}</>
                     }
                   </button>
-
                   {publishStatus === "success" && (
                     <div className="flex items-center gap-2 text-[#1B9A63] bg-[#E9FFF3] border border-green-200 rounded-lg px-3 py-2 text-xs font-medium">
                       <CheckCircle size={13} /> {publishMsg}
@@ -1051,7 +1148,7 @@ function BlogEditor({ editingBlog, onBack }) {
               </div>
             )}
 
-            {/* ── Add block ─────────────────────────────────── */}
+            {/* Add block */}
             <div className="px-5 py-4 border-b border-slate-100">
               <button onClick={() => { setShowAddMenu((v) => !v); setInsertAfterIdx(null); }}
                 className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg font-semibold text-sm text-white hover:opacity-90 transition-all shadow-sm"
@@ -1070,7 +1167,6 @@ function BlogEditor({ editingBlog, onBack }) {
               )}
             </div>
 
-            {/* ── Element editor ────────────────────────────── */}
             {renderEditor()}
           </div>
         )}
@@ -1161,11 +1257,19 @@ function BlogEditor({ editingBlog, onBack }) {
                         ? (() => {
                             const usedH3 = new Map();
                             return elements.map((el, i) => {
-                              const s = el.type === "image"
-                                ? { type: "image", src: el.src, caption: el.caption }
-                                : el.type === "p_with_link"
-                                  ? { type: "p_with_link", textBefore: el.textBefore, linkText: el.linkText, href: el.href, textAfter: el.textAfter }
-                                  : { type: el.type, text: el.text };
+                              // ✅ FIX: build section object correctly for ALL types
+                              let s;
+                              if (el.type === "image") {
+                                s = { type: "image", src: el.src, caption: el.caption };
+                              } else if (el.type === "p_with_link") {
+                                s = { type: "p_with_link", textBefore: el.textBefore, linkText: el.linkText, href: el.href, textAfter: el.textAfter };
+                              } else if (el.type === "table") {
+                                s = { type: "table", headers: el.headers, rows: el.rows, themed: el.themed };
+                              } else if (el.type === "ul" || el.type === "ol") {
+                                s = { type: el.type, text: el.text };
+                              } else {
+                                s = { type: el.type, text: el.text };
+                              }
                               return <PreviewSection key={i} s={s} usedH3={usedH3} />;
                             });
                           })()
@@ -1173,46 +1277,23 @@ function BlogEditor({ editingBlog, onBack }) {
                     }
                   </div>
                 </div>
-
-                {/* TOC */}
-                {/* {toc.length > 0 && (
-                  <aside className="hidden lg:block w-[300px] ml-6">
-                    <div className="sticky top-36">
-                      <div className="rounded-2xl border border-slate-100 bg-white shadow-[0_12px_35px_rgba(0,0,0,0.06)] p-4">
-                        <div className="text-[15px] font-bold text-slate-900">TABLE OF CONTENTS</div>
-                        <div className="mt-2 space-y-1 max-h-[280px] overflow-auto">
-                          {toc.map((t) => (
-                            <button key={t.id}
-                              className="w-full text-left rounded-lg px-2 py-1.5 text-[13px] leading-snug text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition">
-                              {t.text}
-                            </button>
-                          ))}
-                        </div>
-                        <div className="mt-2 text-[10px] text-slate-400">Auto-generated from H3 headings</div>
-                      </div>
-                    </div>
-                  </aside>
-                )} */}
               </div>
             </div>
           </section>
         </div>
       </div>
-
-
     </div>
   );
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
-// ROOT — orchestrates Login → Picker → Editor flow
+// ROOT
 // ═════════════════════════════════════════════════════════════════════════════
 export default function NovaraBlogBuilder() {
   const { isAuthenticated, loading } = useAuth();
-  const [screen, setScreen] = useState("picker"); // "picker" | "editor"
-  const [editingBlog, setEditingBlog] = useState(null); // null = create, blog obj = edit
+  const [screen, setScreen] = useState("picker");
+  const [editingBlog, setEditingBlog] = useState(null);
 
-  // Loading spinner while verifying stored token
   if (loading)
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -1223,21 +1304,18 @@ export default function NovaraBlogBuilder() {
       </div>
     );
 
-  // Not logged in — show login screen
   if (!isAuthenticated) return <LoginScreen />;
 
-  // Picker screen
   if (screen === "picker")
     return (
       <BlogPicker
         onSelect={(blog) => {
-          setEditingBlog(blog); // null = create new
+          setEditingBlog(blog);
           setScreen("editor");
         }}
       />
     );
 
-  // Editor screen
   return (
     <BlogEditor
       editingBlog={editingBlog}
