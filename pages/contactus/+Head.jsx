@@ -7,7 +7,6 @@ export default function Head() {
     "name": "Contact Novara Nature Estates",
     "description": "Get in touch with Novara Nature Estates for managed farmland investment opportunities near Lepakshi and Bangalore."
   }
-
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
