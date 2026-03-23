@@ -20,7 +20,6 @@ export default function Head() {
       { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novaranatureestates.com/blogs" }
     ]
   }
-
   return (
     <>
       <link rel="canonical" href="https://www.novaranatureestates.com/blogs" />
