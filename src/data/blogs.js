@@ -3,9 +3,9 @@ export const BLOGS = [
     "id": 12,
     "slug": "s",
     "category": "Managed Farmland",
-    "title": "sssssssssssssssssss",
+    "title": "ssssss",
     "headline": "ssssssssssssssssssssssssssss",
-    "description": "sssssssssss",
+    "description": "ssssssssssssssssssssssss",
     "date": "Mar 23, 2026",
     "keywords": "sssssssssssssss",
     "author": "Novara Nature Estates",
@@ -42,10 +42,6 @@ export const BLOGS = [
           ]
         ],
         "themed": false
-      },
-      {
-        "type": "p",
-        "text": "srinivas"
       }
     ]
   },
