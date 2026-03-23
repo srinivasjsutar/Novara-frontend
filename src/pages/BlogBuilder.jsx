@@ -561,7 +561,9 @@ function BlogEditor({ editingBlog, onBack }) {
       if (!fileRes.ok) throw new Error(`GitHub fetch failed: ${fileRes.status} ${fileRes.statusText}`);
       const fileData = await fileRes.json();
       const sha = fileData.sha;
-      const currentContent = atob(fileData.content.replace(/\n/g, ""));
+      const binary = atob(fileData.content.replace(/\n/g, ""));
+const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+const currentContent = new TextDecoder("utf-8").decode(bytes);
 
       const stripped = currentContent
         .replace(/^[\s\S]*?export\s+const\s+BLOGS\s*=\s*/, "")
