@@ -381,6 +381,68 @@ export default function BlogDetail({ vikeSlug }) {
                     );
                   }
 
+                  if (s.type === "p_with_bold") {
+                    return (
+                      <p
+                        key={i}
+                        className="text-[13px] sm:text-[14px] leading-relaxed text-slate-600"
+                      >
+                        {s.parts.map((part, idx) =>
+                          part.bold ? (
+                            <strong
+                              key={idx}
+                              className="font-semibold text-[#111827]"
+                            >
+                              {part.text}
+                            </strong>
+                          ) : (
+                            <span key={idx}>{part.text}</span>
+                          ),
+                        )}
+                      </p>
+                    );
+                  }
+                    if (s.type === "p_with_link_bold") {
+                    return (
+                      <p
+                        key={i}
+                        className="text-[13px] sm:text-[14px] leading-relaxed text-slate-600"
+                      >
+                        {s.partsBefore?.map((part, idx) =>
+                          part.bold ? (
+                            <strong
+                              key={idx}
+                              className="font-semibold text-[#111827]"
+                            >
+                              {part.text}
+                            </strong>
+                          ) : (
+                            <span key={idx}>{part.text}</span>
+                          ),
+                        )}
+                        <a
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#DCA000] font-semibold no-underline hover:opacity-90"
+                        >
+                          {s.linkText}
+                        </a>
+                        {s.partsAfter?.map((part, idx) =>
+                          part.bold ? (
+                            <strong
+                              key={idx}
+                              className="font-semibold text-[#111827]"
+                            >
+                              {part.text}
+                            </strong>
+                          ) : (
+                            <span key={idx}>{part.text}</span>
+                          ),
+                        )}
+                      </p>
+                    );
+                  }
                   // ✅ Paragraph with link — FIXED (was missing)
                   if (s.type === "p_with_link") {
                     return (
